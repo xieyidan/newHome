@@ -7,7 +7,7 @@ $(function () {
 	//登录
   	$(".dl").on("click",function(){
 		$(".content-bg").css("display","block"); //登录显示
-		$(".mask-layer").css("display","block");
+		$(".mask-layer").css("display","block"); //遮罩层
 		$(".content-reg").css("display","none");
 		$(".remind-left").css("display","none");
 		$(".news-left").css("display","none");
@@ -18,26 +18,41 @@ $(function () {
 	});
 	//注册
 	$(".zc").on("click",function(){
-		$(".content-reg").css("display","block");
-		$(".mask-layer").css("display","block");
-		$(".content-bg").css("display","none"); //登录
+		$(".content-reg").css("display","block"); //注册显示
+		$(".mask-layer").css("display","block");  //遮罩层
+		$(".content-bg").css("display","none"); 
 		$(".remind-left").css("display","none");
 		$(".news-left").css("display","none");
 		$("body").css("overflow","hidden");
 	});
 	//注册按钮
 	$(".reg-btn").on("click",function(){
-		$(".content-reg").css("display","none");
+		$(".content-reg").css("display","none"); 		
 		$(".mask-layer").css("display","block");
-		$(".content-bg").css("display","block"); //登录
+		$(".content-per").css("display","block"); //注册信息完善
+		$("body").css("overflow","hidden");	
+		
+	});
+	//注册信息完善
+	$(".per-btn").on("click",function(){
+		$(".content-per").css("display","none");  //注册信息完善
+		$(".mask-layer").css("display","block");
+		$(".content-bg").css("display","block"); 
+		$("body").css("overflow","hidden");
+	});
+	//注册信息完善--跳过按钮
+	$(".tg").on("click",function(){
+		$(".content-per").css("display","none");  //注册信息完善
+		$(".mask-layer").css("display","block");
+		$(".content-bg").css("display","block"); 
 		$("body").css("overflow","hidden");
 	});
 	
 	//忘记密码
 	$(".forget").on("click",function(){
-		$(".content-set").css("display","block");
+		$(".content-set").css("display","block"); //重设密码
 		$(".mask-layer").css("display","block");
-		$(".content-bg").css("display","none"); //登录
+		$(".content-bg").css("display","none"); 
 		$("body").css("overflow","hidden");
 	});
 	//重设密码按钮
@@ -53,7 +68,7 @@ $(function () {
 		$(".content-per").css("display","none"); //注册信息完善
 		$(".content-set").css("display","none"); //重设密码
 		$(this).css("display","none");  //隐藏遮罩层
-		$("body").css("overflow","visible"); //隐藏body
+		$("body").css("overflow","visible"); //显示body
 	});
 	
 	//已登录，注册

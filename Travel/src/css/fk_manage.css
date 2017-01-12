@@ -56,18 +56,18 @@ a {
 	color: #1bc272 !important;
 	font-weight: bold;
 }
-
-/***右侧——全部订单***/
-.right-cont {
+/***右侧内容***/
+.right-box {
 	float: left;
 	width: 1050px;
 	overflow: hidden;
 }
+/***右侧——全部订单***/
+.right-cont {
+	
+}
 .r-color {
 	color: #646464;
-}
-#item1 {
-	display: none;
 }
 /*房客选项的提示*/
 .right-top {
@@ -217,9 +217,7 @@ a {
 /***右侧——我的评价***/
 
 /***右侧——个人信息***/
-#item2 {
-	display: block;
-}
+
 .Personal-infor {
 	text-align: center;
 	margin: 0 auto;
@@ -335,16 +333,58 @@ select:nth-of-type(2),select:nth-of-type(3) {
 
 
 /***右侧——密码设置***/
-#item3 {
-	display: none;
+#item6 .right-center {
+	height: 658px;
 }
 /*标题*/
 .set-pwd {
 	font-size: 18px;
 	text-align: center;
 	padding-top: 30px;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 }
+/*获取验证码*/
+.change {
+    width: 81%;
+    position: relative;
+    left: 308px;
+    overflow: hidden;
+}
+.change dl {
+	width: 100%;
+    height: 65px;
+}
+.change dl dt {
+    float: left;
+    width: 75px;
+    font-size: 16px;
+    text-align: left;
+}
+.change dl dt span {
+	display: block;
+}
+.change dl dd {
+    float: left;  
+}
+.change dl dd input {
+	width: 180px;
+	height: 34px;
+	background: #fff;
+	padding-left: 10px;
+}
+.get-code {
+	display: inline-block;
+	color: #fff;
+	font-size: 14px;
+	background: #1bc272;
+	border-radius: 10px;
+	padding: 6px 26px;
+	margin-left: 20px;
+}
+.get-code:hover {
+	color: #fff;
+}
+
 /***右侧——入住人***/
 
 /***右侧——优惠券***/

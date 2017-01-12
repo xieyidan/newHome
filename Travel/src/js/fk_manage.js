@@ -4,9 +4,14 @@
 
 $(function(){
 	//左侧标题
+	$(".item:gt(0)").hide();  //隐藏class名为xl的索引大于0的元素
 	$(".nav-cont .current").click(function(){				
 		$(".nav-cont .current").removeClass("actives"); //移除其他元素样式
 		$(this).addClass("actives");  //添加当前元素样式
+		
+		var index=$(".nav-cont .current").index(this); //获取当前current的索引
+		$(".item").eq(index).siblings().hide(); //隐藏当前current索引下兄弟元素的内容
+		$(".item").eq(index).show(); //显示当前current索引下的内容
 	});
 	
 	//添加头像

@@ -5,11 +5,12 @@
 /*遮罩层*/
 .mask-layer{
 	width: 1920px;
-    height: 5000px;
-    z-index: 199;
+	min-width: 1240px;
+    height: 1080px;
+    z-index: 700;
     background: none 0px 0px repeat scroll rgb(0, 0, 0);
     opacity: 0.5;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	display: none;

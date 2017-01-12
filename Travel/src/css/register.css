@@ -182,7 +182,6 @@ a:hover {
 	height: 120px;
 	border-radius: 50%;
 }
-
 /*完善内容*/
 #per-shortcut {
     width: 530px;;
@@ -204,8 +203,8 @@ a:hover {
     font-size: 18px;
     color: #323232;
 }
-@media (min-width: 768px) {
-	.col-sm-10 {
+ @media (min-width: 768px) {
+	.content-per .col-sm-10 {
 	    width: 53.33333333%;
 	}
 }
