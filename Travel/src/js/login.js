@@ -6,7 +6,7 @@ $(function () {
 	//未登录、注册
 	//登录
   	$(".dl").on("click",function(){
-		$(".content-bg").css("display","block");
+		$(".content-bg").css("display","block"); //登录显示
 		$(".mask-layer").css("display","block");
 		$(".content-reg").css("display","none");
 		$(".remind-left").css("display","none");
@@ -20,7 +20,7 @@ $(function () {
 	$(".zc").on("click",function(){
 		$(".content-reg").css("display","block");
 		$(".mask-layer").css("display","block");
-		$(".content-bg").css("display","none");
+		$(".content-bg").css("display","none"); //登录
 		$(".remind-left").css("display","none");
 		$(".news-left").css("display","none");
 		$("body").css("overflow","hidden");
@@ -29,7 +29,7 @@ $(function () {
 	$(".reg-btn").on("click",function(){
 		$(".content-reg").css("display","none");
 		$(".mask-layer").css("display","block");
-		$(".content-bg").css("display","block");
+		$(".content-bg").css("display","block"); //登录
 		$("body").css("overflow","hidden");
 	});
 	
@@ -37,7 +37,7 @@ $(function () {
 	$(".forget").on("click",function(){
 		$(".content-set").css("display","block");
 		$(".mask-layer").css("display","block");
-		$(".content-bg").css("display","none");
+		$(".content-bg").css("display","none"); //登录
 		$("body").css("overflow","hidden");
 	});
 	//重设密码按钮
@@ -48,11 +48,12 @@ $(function () {
 	});
 	//遮罩层
 	$(".mask-layer").on("click",function(){
-		$(".content-bg").css("display","none");
-		$(".content-reg").css("display","none");
-		$(".content-set").css("display","none");
-		$(this).css("display","none");
-		$("body").css("overflow","visible");
+		$(".content-bg").css("display","none"); //登录
+		$(".content-reg").css("display","none"); //注册	
+		$(".content-per").css("display","none"); //注册信息完善
+		$(".content-set").css("display","none"); //重设密码
+		$(this).css("display","none");  //隐藏遮罩层
+		$("body").css("overflow","visible"); //隐藏body
 	});
 	
 	//已登录，注册

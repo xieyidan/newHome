@@ -152,7 +152,7 @@ a:hover {
 	left: 50%;
 	margin: -460px 0 0 -600px;
 	z-index: 701;
-	display: block;	
+	display: none;	
 }
 /*添加头像*/
 .my-pic {
