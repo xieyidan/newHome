@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv = "X-UA-Compatible" cotent = "IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="短租房网站，日租房公寓，民宿预定，短租公寓网站，家庭旅馆">
+    <meta name="description" content="居家游以礼游天下为理念,提供最全面优质的短租房、民宿、日租房房源,为你带来居家式的服务体验!">
+	<title>房客后台管理</title>
+	<!--CSS样式表-->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/reset.css" /><!--公共样式-->
+    <link rel="stylesheet" href="../css/header_two.css" /><!--头部-->
+    <link rel="stylesheet" href="../css/common.css" /><!--右侧悬浮-->
+    <link rel="stylesheet" href="../css/fk_manage.css" /><!--房东房源管理-->
+    <link rel="stylesheet" href="../css/footer.css" /><!--底部-->
+    <!--JS-->
+    <script src="../assets/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/fk_manage.js"></script>
+    <script src="../js/Commonality.js"></script><!--控件-->
+</head>
+<body>
+	<!--头部-->
+    <div class="header">
+        <nav class="navbar">
+            <div class="container-fluid clear">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="../Index/index.html"><img src="../images/logo1.png" alt="居家游logo"/></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                	<!--未登录-->
+                    <ul class="nav navbar-nav navbar-right nolink clear">
+                    	<li class="service"><a href="javascript:void(0)" target="_blank"><img src="../images/house/header_tell_icon.png" alt="客服电话">400-047-6667</a></li>
+                        <li class="login"><a class="dl" href="javascript:void(0)">登录</a><span class="top_line"></span><a class="zc" href="javascript:void(0)">注册</a></li>
+                        <li class="house"><a class="release" href="javascript:void(0)" target="_blank">免费发布房源</a></li>
+                    </ul>
+                    <!--登录-->
+                    <ul class="nav navbar-nav navbar-right fk clear">
+                    	<li class="service"><a href="javascript:void(0)" target="_blank"><img src="../images/house/header_tell_icon.png" alt="客服电话">400-047-6667</a></li>
+                        <li class="user-img"><a href="javascript:void(0)" target="_blank"><img src="../images/user/user_icon.png" alt="用户头像"><span>用户名称</span></a>
+                           <ul class="fk-pulldown">
+						      <li><a href="javascript:void(0)">我的订单</a></li>
+							  <li><a href="javascript:void(0)">聊天记录</a></li>
+							  <li><a href="javascript:void(0)">我的收藏</a></li>
+							  <li><a href="javascript:void(0)">我的设置</a></li>
+                              <li><a class="log-out" href="javascript:void(0)">退出登录</a></li>
+						  </ul>
+                        </li>
+                        <li class="login"><a href="javascript:void(0)" target="_blank">我是房东</a>
+                           <ul class="fd-pulldown">
+						      <li class="no-dredge"><span>您尚未开通房东功能</span></li>
+							  <li><a class="my-dredge" href="javascript:void(0)">我要开通</a></li>
+						   </ul>
+                           <ul class="fd-dredge">
+						      <li><a href="javascript:void(0)">订单管理</a></li>
+							  <li><a href="javascript:void(0)">房源管理</a></li>
+							  <li><a href="javascript:void(0)">结算管理</a></li>
+							  <li><a href="javascript:void(0)">消息管理</a></li>
+                              <li><a href="javascript:void(0)">我的评价</a></li>
+                              <li><a href="javascript:void(0)">我的设置</a></li>
+						  </ul>
+                        </li>
+                        <li class="house" style="margin-top:5px;"><a class="release" href="javascript:void(0)" target="_blank">免费发布房源</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--主体内容-->
+    <div class="main">
+    	<div class="main-cont clear">
+    		<!--左侧内容-->
+    		<div class="left-cont">
+    			<ul class="left-nav">
+    				<li>
+    					<div class="nav-title" href="javascript:;"><img src="../images/user/dingdan_icon.png" alt="我的订单图标"><span>我的订单</span></div>
+    					<div class="nav-cont">
+    						<a class="current actives" href="javascript:;">全部订单</a>
+    					</div>
+    				</li>
+    				<li>
+    					<div class="nav-title" href="javascript:;"><img src="../images/user/xiaoxi_icon.png" alt="我的消息图标"><span>我的消息</span></div>
+    				    <div class="nav-cont">
+    				    	<a class="current" href="javascript:;">聊天记录</a>
+    				    	<a class="current" href="javascript:;">系统消息</a>
+    				    </div>
+    				</li>
+    				<li>
+    					<div class="nav-title" href="javascript:;"><img src="../images/user/pingjia_icon.png" alt="我的评价图标"><span>我的评价</span></div>
+    					<div class="nav-cont">
+    						<a class="current" href="javascript:;">我的评价</a>
+    					</div>
+    				</li>
+    				<li>
+    					<div class="nav-title" href="javascript:;"><img src="../images/user/shezhi_icon.png" alt="我的设置图标"><span>我的设置</span></div>
+    					<div class="nav-cont">
+    						<a class="current" href="javascript:;">个人信息</a>
+    						<a class="current" href="javascript:;">密码设置</a>
+    				    	<a class="current" href="javascript:;" style="padding-right: 13px;">入住人</a>
+    				    	<a class="current" href="javascript:;" style="padding-right: 13px;">优惠券</a>
+    				    	<a class="current" href="javascript:;">我的收藏</a>
+    				    	<a class="current" href="javascript:;">分享优惠</a>
+    					</div>
+    				</li>
+    			</ul>
+    		</div>
+    		<!--右侧内容_全部订单-->
+    		<div class="right-cont" id="item1">
+    			<p class="r-color right-top"><span>我是房客 ></span><span>我的订单 ></span><span>全部订单</span></p>
+    			<div class="right-center">
+    				<!--订单列表-->
+    				<div class="goods-list">
+    					<!--订单号，时间，状态-->
+    					<div class="goods-box clear">
+			            	<div class="txt-left">
+			            		<p class="goods-num">订单号：<span style="padding-right:15px;">123456789012</span></p>
+			            		<p class="goods-time">下单时间：<span>2017-1-05 14:51:04</span><a>取消订单</a></p>
+			            	</div>
+			                <div class="txt-right">订单状态：<span>待房东确认</span></div>
+			            </div>
+			            <!--订单房源信息-->
+			            <div class="order-item">
+			            	<div class="order-img"><img src="../images/house/fangyuan_04.png" alt="房源图"></div>
+			            	<div class="order-content">
+			            		<p>四度-工业风/环球中心新会展地铁口/<span>可停车</span></p>
+			            		<p class="fcolor"><span>2017-1-05</span>至<span>2017-1-12</span>共<span>2</span>晚<span>2</span>套房</p>
+			            		<p class="fcolor fd-name"><span>房东呢称</span><span><img src="../images/user/lianxifangdong_icon.png" />联系房东</span><a>支付后可见联系方式</a></p>
+			            		<p class="fcolor">查看房东其他房源</p>
+			            	</div>
+			            	<div class="order-state"><a></a></div>
+			            	<div class="order-money">
+			            		<p>订单金额 <span>￥660</span></p>
+			            		<p class="fcolor">线下押金 <span>￥660</span></p>
+			            		<p><a>订单详情 ></a></p>
+			            	</div>
+			            </div>
+    				</div>
+    				<!--订单列表-->
+    				<div class="goods-list">
+    					<!--订单号，时间，状态-->
+    					<div class="goods-box clear">
+			            	<div class="txt-left">
+			            		<p class="goods-num">订单号：<span style="padding-right:15px;">123456789012</span></p>
+			            		<p class="goods-time">下单时间：<span>2017-1-05 14:51:04</span><a>取消订单</a></p>
+			            	</div>
+			                <div class="txt-right">订单状态：<span>待付款</span></div>
+			            </div>
+			            <!--订单房源信息-->
+			            <div class="order-item">
+			            	<div class="order-img"><img src="../images/house/fangyuan_04.png" alt="房源图"></div>
+			            	<div class="order-content">
+			            		<p>四度-工业风/环球中心新会展地铁口/可停车</p>
+			            		<p class="fcolor"><span>2017-1-05</span>至<span>2017-1-12</span>共<span>2</span>晚<span>2</span>套房</p>
+			            		<p class="fcolor fd-name"><span>房东呢称</span><span><img src="../images/user/lianxifangdong_icon.png" />联系房东</span><a>支付后可见联系方式</a></p>
+			            		<p class="fcolor">查看房东其他房源</p>
+			            	</div>
+			            	<div class="order-state"><a>立即支付</a></div>
+			            	<div class="order-money">
+			            		<p>订单金额 <span>￥660</span></p>
+			            		<p class="fcolor">线下押金 <span>￥660</span></p>
+			            		<p><a>订单详情 ></a></p>
+			            	</div>
+			            </div>
+    				</div>
+    				<!--订单列表-->
+    				<div class="goods-list">
+    					<!--订单号，时间，状态-->
+    					<div class="goods-box clear">
+			            	<div class="txt-left">
+			            		<p class="goods-num">订单号：<span style="padding-right:15px;">123456789012</span></p>
+			            		<p class="goods-time">下单时间：<span>2017-1-05 14:51:04</span><a>删除订单</a></p>
+			            		<p class="goods-eval"><a>评价送50积分！</a></p>
+			            	</div>
+			                <div class="txt-right">订单状态：<span>已完成</span></div>
+			            </div>
+			            <!--订单房源信息-->
+			            <div class="order-item">
+			            	<div class="order-img"><img src="../images/house/fangyuan_04.png" alt="房源图"></div>
+			            	<div class="order-content">
+			            		<p>四度-工业风/环球中心新会展地铁口/<span>可停车</span></p>
+			            		<p class="fcolor"><span>2017-1-05</span>至<span>2017-1-12</span>共<span>2</span>晚<span>2</span>套房</p>
+			            		<p class="fcolor fd-name"><span>房东呢称</span><span><img src="../images/user/lianxifangdong_icon.png" />联系房东</span><a></a></p>
+			            		<p class="fcolor">查看房东其他房源</p>
+			            	</div>
+			            	<div class="order-state"><a>评价房东</a></div>
+			            	<div class="order-money">
+			            		<p>订单金额 <span>￥660</span></p>
+			            		<p class="fcolor">线下押金 <span>￥660</span></p>
+			            		<p><a>订单详情 ></a></p>
+			            	</div>
+			            </div>
+    				</div>
+    				<!--订单列表-->
+    				<div class="goods-list">
+    					<!--订单号，时间，状态-->
+    					<div class="goods-box clear">
+			            	<div class="txt-left">
+			            		<p class="goods-num">订单号：<span style="padding-right:15px;">123456789012</span></p>
+			            		<p class="goods-time">下单时间：<span>2017-1-05 14:51:04</span><a>我要退房</a></p>
+			            	</div>
+			                <div class="txt-right">订单状态：<span>待入住</span></div>
+			            </div>
+			            <!--订单房源信息-->
+			            <div class="order-item">
+			            	<div class="order-img"><img src="../images/house/fangyuan_04.png" alt="房源图"></div>
+			            	<div class="order-content">
+			            		<p>四度-工业风/环球中心新会展地铁口/可停车</p>
+			            		<p class="fcolor"><span>2017-1-05</span>至<span>2017-1-12</span>共<span>2</span>晚<span>2</span>套房</p>
+			            		<p class="fcolor fd-name"><span>房东呢称</span><span><img src="../images/user/lianxifangdong_icon.png" />联系房东</span><a>查看联系方式</a></p>
+			            		<p class="fcolor">查看房东其他房源</p>
+			            	</div>
+			            	<div class="order-state"><a>入住确定</a></div>
+			            	<div class="order-money">
+			            		<p>订单金额 <span>￥660</span></p>
+			            		<p class="fcolor">线下押金 <span>￥660</span></p>
+			            		<p><a>订单详情 ></a></p>
+			            	</div>
+			            </div>
+    				</div>
+    				<!--分页-->
+				    <ul class="pagination">		
+						<li class=""><a href="#">尾页</a></li>
+						<li class=""><a href="#">下一页</a></li>
+						<li><a href="#">...</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">1</a></li>
+					</ul>
+    			</div>
+    		</div>
+    		<!--右侧内容_个人信息-->
+    		<div class="right-cont" id="item2">
+    			<p class="r-color right-top"><span>我是房客 ></span><span>我的设置 ></span><span>个人信息</span></p>
+    			<div class="right-center">
+    				<!--头像-->
+    				<div class="Personal-infor">
+    					<p class="my-infor">我的基本资料</p>
+    					<div class="my-pic">
+    					   <p class="fk-img imghead">
+						   	   <img class="previewBtn" src="../images/user/fk_touxiang_icon.png">
+						   	   <input class="previewBtn" type="file" multiple />
+    					   </p>
+    					   <p>我的头像</p>
+    					</div>
+    					<p class="get-integral">完善资料可获取200积分</p>    					
+    				</div>
+					<!--完善信息-->
+					<div class="perfect">
+						<dl>
+							<dt>用户昵称</dt>
+							<dd>
+								<input type="text" placeholder="请设置您的昵称">
+								<span class="bank-card">您是银行卡会员，<a href="javascript:;">点击查看会员规则</a></span>
+							</dd>
+						</dl>
+						<dl>
+							<dt>性别</dt>
+							<dd>
+								<div class="radio" name="sex" value="先生"><ins></ins><span class="">先生</span></div>
+		                        <div class="radio" name="sex" value="女士"><ins></ins><span class="">女士</span></div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>出生日期</dt>
+							<dd>
+								<select>
+									<option>请选择</option>
+								</select>
+								<span>年</span>
+								<select>
+									<option>请选择</option>
+								</select>
+								<span>月</span>
+								<select>
+									<option>请选择</option>
+								</select>
+								<span>日</span>
+							</dd>
+						</dl>
+						<dl>
+							<dt>真实姓名</dt>
+							<dd>
+								<input id="reserve-name" type="text" placeholder="请输入您的真实姓名">
+							</dd>
+						</dl>
+						<dl>
+							<dt>联系电话</dt>
+							<dd>
+								<input id="reserve-tel" type="text" placeholder="请输入您的联系电话">
+								<a>修改</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>身份证号码</dt>
+							<dd>
+								<input type="text" placeholder="请输入您的身份证号码">
+							</dd>
+						</dl>
+						<dl>
+							<dt>邮箱</dt>
+							<dd>
+								<input type="text" placeholder="请输入邮箱地址">
+							</dd>
+						</dl>
+						<dl>
+							<dt>所在城市</dt>
+							<dd>
+								<select>
+									<option>请选择</option>
+								</select>
+								<select>
+									<option>请选择</option>
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt>所在故乡</dt>
+							<dd>
+								<select>
+									<option>请选择</option>
+								</select>
+								<select>
+									<option>请选择</option>
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt>血型</dt>
+							<dd>
+								<select>
+									<option>请选择</option>
+									<option>A型</option>
+									<option>B型</option>
+									<option>AB型</option>
+									<option>O型</option>
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt>工作</dt>
+							<dd>
+								<input class="job" type="text" placeholder="请填写职业">
+								<input class="job" type="text" placeholder="请填写职位名">
+							</dd>
+						</dl>
+						<dl>
+							<dt>教育</dt>
+							<dd>
+								<select>
+									<option>请选择学历</option>
+									<option>博士</option>
+									<option>本科</option>
+									<option>专科</option>
+									<option>高中</option>
+								</select>
+								<input class="school" type="text" placeholder="请填写学校">
+							</dd>
+						</dl>
+					</div>
+					<button class="save" type="submit">保存</button>
+    			</div>
+    		</div>
+    	    <!--右侧内容_密码设置-->
+    		<div class="right-cont" id="item3">
+    			<p class="r-color right-top"><span>我是房客 ></span><span>我的设置 ></span><span>密码设置</span></p>
+    			<div class="right-center">
+    				<p class="set-pwd">密码设置</p>
+    				<div class="perfect">
+    					<dl>
+							<dt><span>手机号</span></dt>
+							<dd>
+								<input type="text" placeholder="请输入您的手机号码">
+							</dd>
+						</dl>
+						<dl>
+							<dt><span>图片</span><span>验证码</span></dt>
+							<dd>
+								<input type="text" placeholder="请输入图片验证码">
+							</dd>
+						</dl>
+						<dl>
+							<dt><span>手机</span><span>验证码</span></dt>
+							<dd>
+								<input type="text" placeholder="请输入手机验证码">
+							</dd>
+						</dl>
+						<dl>
+							<dt><span>新密码</span></dt>
+							<dd>
+								<input type="text" placeholder="请输入您的新密码">
+							</dd>
+						</dl>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <!--底部内容-->
+    <div class="footer_box">
+        <div class="footer_wrap">
+            <div class="footer_row">
+                <ul class="footer_row_ul">
+                    <li><p>关于我们</p></li>
+                    <li><a href="javascript:void(0);" target="_blank">关于居家游</a></li>
+                    <li><a href="javascript:void(0);" target="_blank">联系我们</a></li>
+                </ul>
+                <ul class="footer_row_ul">
+                    <li><p>加入我们</p></li>
+                    <li><a href="javascript:void(0);" target="_blank">职位招聘</a></li>
+                </ul>
+                <ul class="footer_row_ul">
+                    <li><p>服务条款</p></li>
+                    <li><a href="javascript:void(0);" target="_blank">免责声明</a></li>
+                    <li><a href="javascript:void(0);" target="_blank">版权声明</a></li>
+                    <!--<li><a href="/article/detail/id/15.html" target="_blank">社区指南</a></li>-->
+                    <li><a href="javascript:void(0);" target="_blank">会员条款</a></li>
+                </ul>
+                <ul class="footer_row_ul">
+                    <li><p>帮助中心</p></li>
+                    <li><a href="javascript:void(0);" target="_blank">网站地图 </a></li>
+                    <li><a href="javascript:void(0);" target="_blank">使用帮助 </a></li>
+                    <li><a href="javascript:void(0);" target="_blank">新手上路 </a></li>
+                </ul>
+                <ul class="footer_row_ul">
+                    <li class="we">
+                        <a class="WeCha" href="javascript:void(0)" target="_blank"><img src="../images/index/weixin_icon.png" alt="居家游微信公众号"><div class="footer_er"></div></a>
+                        <a href="http://weibo.com/jujiayou" target="_blank"><img src="../images/index/sina_icon.png" alt="居家游微博"></a>
+                    </li>
+                    <li><span class="hot24">24小时全国服务热线</span></li>
+                    <li><span class="phone">400-047-6667</span><span class="phone">0851-82215566</span></li>
+                </ul>        
+            </div>
+            <div class="footer_end">
+                <dl class="city-nav">
+                    <dt>热门城市：</dt>
+                    <dd>
+                        <a href="javascript:void(0)" target="_blank">贵阳短租房</a>
+                        <a href="javascript:void(0)" target="_blank">上海短租房</a>
+                        <a href="javascript:void(0)" target="_blank">武汉短租房</a>
+                        <a href="javascript:void(0)" target="_blank">成都短租房</a>
+                        <a href="javascript:void(0)" target="_blank">重庆短租房</a>
+                        <a href="javascript:void(0)" target="_blank">广州短租房</a>
+                        <a href="javascript:void(0)" target="_blank">西安短租房</a>
+                        <a href="javascript:void(0)" target="_blank">北京短租房</a>
+                        <a href="javascript:void(0)" target="_blank">南京短租房</a>
+                        <a href="javascript:void(0)" target="_blank">杭州短租房</a>
+                    </dd>
+                </dl>
+                <p>地址：贵州省贵阳市观山湖区高新区管委会都匀路89号金利大厦A栋2楼</p>
+                <p>Copyright © 2016 Jujiayou All Rights Reserved
+                    <a href="http://www.miitbeian.gov.cn/" hidefocus="true" target="_blank"> &nbsp;黔ICP备16001483号-1</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

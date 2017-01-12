@@ -1,0 +1,354 @@
+@charset "utf-8";
+/* CSS Document */
+
+/***主体内容***/
+.main {
+	width: 100%;
+	min-width: 1240px;
+}
+.main-cont {
+	width: 1240px;
+	margin: 0 auto;
+}
+a {
+	cursor: pointer;
+}
+/***左侧内容***/
+.left-cont {
+	position: relative;
+	float: left;
+	width: 190px;
+	background: #d5dbd8;
+	overflow: hidden;
+	z-index: 1;
+	box-shadow: 0px 0px 11px 5px #eee;
+}
+.left-nav {
+    float: left;
+    width: 100%;
+    height: auto;   
+}
+.left-nav li .nav-title{
+	display: block;
+	height: 42px;
+	font-size: 18px;
+	line-height: 42px;
+	text-align: center;
+}
+.left-nav li .nav-title img {
+	padding-right: 10px;
+	padding-top: 2px;
+	vertical-align: text-top;
+}
+/*我的订单*/
+.nav-cont {
+	text-align: center;
+	background: #fff;
+	padding: 15px 0;
+}
+.nav-cont a {
+	display: block;
+	color: #646464;
+	font-size: 14px;
+	line-height: 27px;
+}
+.actives {
+	color: #1bc272 !important;
+	font-weight: bold;
+}
+
+/***右侧——全部订单***/
+.right-cont {
+	float: left;
+	width: 1050px;
+	overflow: hidden;
+}
+.r-color {
+	color: #646464;
+}
+#item1 {
+	display: none;
+}
+/*房客选项的提示*/
+.right-top {
+	padding: 20px 10px;
+}
+.right-top span{
+	color: #646464;
+	padding-right: 5px;
+}
+/*订单列表*/
+.right-center {
+	width: 100%;
+	background: #fff;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.goods-list {
+	padding-top: 30px;
+	margin-left: 20px;
+	border-bottom: 2px solid #ccc;
+}
+/*订单号，订单时间*/
+
+.txt-left {
+	float: left;
+	width: 77%;
+	padding-bottom: 20px;
+}
+.txt-left p {
+	display: inline-block;
+}
+.goods-num {
+	padding-right: 20px;
+}
+.goods-time,.goods-time span,.goods-time a {
+	color: #969696;
+	font-size: 12px;
+}
+.goods-time a {
+	padding-left: 20px;
+	cursor: pointer;
+}
+/*评价*/
+.goods-eval a {
+	color: #ff6a51;
+	font-size: 14px;
+	padding-left: 190px;
+}
+/*订单状态*/
+.txt-right {
+	float: left;
+}
+.txt-right span {
+	color: #ff1a00;
+}
+/*订单房源信息*/
+.order-item {
+	width: 100%;
+	padding-bottom: 20px;
+	overflow: hidden;
+	position: relative;
+}
+/*房源图*/
+.order-img {
+	float: left;
+	width: 200px;
+	height: 120px;
+}
+.order-img img {
+	width: 100%;
+	height: 100%;
+}
+/*房源介绍*/
+.order-content {
+	float: left;
+	padding-top: 9px;
+	padding-left: 10px;
+	padding-right: 100px;
+}
+.fcolor,.fcolor span,.fcolor a {
+	color: #646464;
+	line-height: 25px;
+	
+}
+.fd-name {
+	padding-top: 15px;
+}
+.fd-name img {
+	padding-left: 20px;
+	padding-right: 10px;
+	vertical-align: bottom;
+}
+.fd-name a {
+	color: #ff6a51;
+	padding-left: 20px;
+}
+/*状态*/
+.order-state {
+	float: left;
+	position: absolute;
+    right: 330px;
+}
+.order-state a {
+	display: block;
+	color: #ff6a51;
+	font-size: 18px;
+	font-weight: bold;
+    line-height: 120px;	
+}
+/*订单金额*/
+.order-money {
+	float: right;
+	padding-top: 9px;
+	padding-right: 137px;
+}
+.order-money p a {
+	display: block;
+	color: #646464;
+	padding-top: 38px;
+	cursor: pointer;
+}
+
+/***分页***/
+.pagination {
+	width: 100%;
+	height: 50px;
+	background: #d5dbd8;
+	margin: 0 auto;
+    margin-top: 35px;
+}
+.pagination li {
+	float: right;
+}
+.pagination li a {
+	display: block;
+	width: 86px;
+	height: 50px;
+	line-height: 50px;
+	border-left: 1px solid #fff;
+	text-align: center;
+}
+
+/***右侧——聊天记录***/
+
+/***右侧——系统消息***/
+
+/***右侧——我的评价***/
+
+/***右侧——个人信息***/
+#item2 {
+	display: block;
+}
+.Personal-infor {
+	text-align: center;
+	margin: 0 auto;
+}
+/*我的基本资料*/
+.my-infor {
+	font-size: 18px;
+	padding: 30px 0 20px 0;
+}
+/*上传头像*/
+.imghead {
+    position: relative;
+    display: inline-block;
+}
+.imghead input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: 0;
+}
+.imghead .previewImg{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+/*我的头像*/
+.my-pic p {
+	font-size: 16px;
+	margin-top: 10px;
+}
+/*积分*/
+.get-integral {
+	color: #ff1a00;
+	font-size: 18px;
+	padding: 20px 0;
+}
+
+/*完善信息*/
+.perfect {
+	width: 81%;
+	position: relative;
+	left: 198px;
+	overflow: hidden;
+}
+/*用户呢称*/
+.perfect dl {
+	width: 100%;
+	height: 60px;
+}
+.perfect dl dt {
+	float: left;
+	width: 80px;
+	font-size: 16px;
+	line-height: 34px;
+	text-align: right;
+}
+.perfect dl dd {
+	float: left;
+	margin-left: 20px;
+}
+.perfect dl dd select,.perfect dl dd input {
+	height: 34px;
+	background: #fff;
+	padding-left: 10px;
+}
+.perfect dl dd input[type="text"] {
+	width: 315px;
+}
+.perfect dl dd select {
+	width: 110px;
+	margin-right: 6px;
+}
+.bank-card {
+	color: #ff1a00;
+	padding-left: 30px;
+}
+/*性别*/
+.radio {
+	height: 30px;
+    line-height: 30px;
+}
+.radio:nth-of-type(2) {
+	margin-left: 50px;
+}
+/*出生日期*/
+select:nth-of-type(2),select:nth-of-type(3) {
+	margin-left: 24px;
+}
+/*工作*/
+.job {
+	width: 110px !important;
+    margin-right: 30px;
+}
+/*教育*/
+.school {
+	width: 180px !important;
+    margin-left: 24px;
+}
+/*保存按钮*/
+.save {
+	display: block;
+	width: 180px;
+	height: 50px;
+	color: #fff;
+	font-size: 18px;
+	background: #1bc272;
+	border-radius: 10px;
+	margin: 20px auto 40px auto;
+}
+
+
+/***右侧——密码设置***/
+#item3 {
+	display: none;
+}
+/*标题*/
+.set-pwd {
+	font-size: 18px;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+/***右侧——入住人***/
+
+/***右侧——优惠券***/
+
+/***右侧——我的收藏***/
+
+/***右侧——分享优惠***/
