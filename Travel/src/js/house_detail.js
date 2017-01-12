@@ -1,6 +1,7 @@
 ;(function () {
 	$(document).ready(function(){ 
 /******轮播图**********/
+	
 	var housePic = $('.house-pic');//外层
 	var LargePic = $('.Large-pic');//大图
 	var thumbPic = $('.thumb_pic');//缩略图
@@ -8,32 +9,32 @@
 	var btn2 = $('.btn2');//右边按钮
 	var index = 0 ;
 	var allWidth = thumbPic.width();//ul总宽度
-	var LiWidth = thumbPic.width()/10; //li宽度
-	//获取所有图片
-    var len = LargePic.children("li").length;
-  	console.log(len)
+	var LiWidth = thumbPic.find("li").eq(0).outerWidth(true); //li宽度
+    var len = LargePic.children("li").length;//获取所有图片
+	console.log(LiWidth)
 	//初始状态
     show();
     //自动轮播
-    //var timer = setInterval(animating,3000);
+    var timer = setInterval(animating,3000);
     //点击小图时
 	thumbPic.on("click","li",function(){
-		//clearInterval(timer);  //清除定时器
+		clearInterval(timer);  //清除定时器
 		index = $(this).index();
 		show();
 	});
 	//左右控制
 	btn1.on("click",function(){
-		index--;
+		
 		show();
 		console.log(index);
-		if (index > 3) {
-			thumbPic.animate({left:"+=132px"});
+		if (index > 4) {
+			thumbPic.animate({left:"+="+LiWidth+""});
 			
 		}else if(index == 0){
 			index = 1;
-			thumbPic.children("li").eq(index-1).animate({opacity:1}).siblings().animate({opacity:0.5});
+			thumbPic.children("li").eq(index-1).css({opacity:1}).siblings().css({opacity:0.5});
 		}
+		index--;
 		
 	})
 	btn2.on("click",function(){
@@ -42,20 +43,20 @@
 		show();
 		console.log(index)
 		if (index >= 5 && index < len-1) {
-			thumbPic.animate({left:"-=132px"});
+			thumbPic.animate({left:"-="+LiWidth+""});
 			
 		}else if(index == len-1) {
 			index =len-2;
-			thumbPic.children("li").eq(index).animate({opacity:1}).siblings().animate({opacity:0.5});
+			thumbPic.children("li").eq(index).css({opacity:1}).siblings().css({opacity:0.5});
 		}
 		
 	});
 	
 	//图片轮播
-//	function animating(){
-//		index++;
-//		show();
-//	}
+	function animating(){
+		index++;
+		show();
+	}
      		
 	//图片切换
 	function show(){
@@ -64,8 +65,8 @@
 		}else if(index < 0){
 			index = len - 1;
 		}
- 		LargePic.children("li").eq(index).animate({opacity:1}).siblings().animate({opacity:0});
- 		thumbPic.children("li").eq(index).animate({opacity:1}).siblings().animate({opacity:0.5});
+ 		LargePic.children("li").eq(index).css({opacity:1}).siblings().css({opacity:0});
+ 		thumbPic.children("li").eq(index).css({opacity:1}).siblings().css({opacity:0.5});
 	}
    
 
@@ -80,11 +81,11 @@
 			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 			if(scrollTop>130){ 
 				
-				if(scrollTop>1920){
-					rightBox.css({"position":"relative","top":"1610px","right":"0px"});
+				if(scrollTop>1760){
+					rightBox.css({"position":"relative","top":"1605px","left":"0px"});
 				}else{
 					col.show();
-					rightBox.css({"position":"fixed","top":"60px","right":"332px"});
+					rightBox.css({"position":"fixed","top":"60px","left":"60%"});
 				}
 			}
 			else{ 

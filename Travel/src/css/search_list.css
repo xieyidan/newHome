@@ -253,6 +253,7 @@
 }
 .house-content {
 	margin-top: 15px;
+	height: 1200px;
 	clear: both;
 }
 /*展开筛选条件*/
@@ -319,23 +320,13 @@
     width: 43%;
     height: 100%;    
     box-sizing: border-box;
-    overflow: hidden;
-    background: #fff;
 }
 .map-fixed {
     position: fixed;
     top: 50px;
     z-index: 20;
 }
-/*#allmap{
-	display: block;
-	float: right;
-    width: 100%;
-    top: 56px;
-    bottom: 0;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}*/
+
 /*房源信息详情*/
 .city-box {
 	float: right;
