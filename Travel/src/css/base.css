@@ -1,3 +1,22 @@
 @charset "utf-8";
 /* CSS Document */
 
+/*上传头像*/
+.imghead {
+    position: relative;
+    display: inline-block;
+}
+.imghead input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: 0;
+}
+.imghead .previewImg{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}

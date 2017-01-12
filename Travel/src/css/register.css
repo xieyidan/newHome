@@ -122,7 +122,7 @@ a:hover {
 .reg-btn {
 	width: 180px;
 	height: 55px;
-	font-size: 22px;
+	font-size: 18px;
 	background-color: #1bc272;
 	border-radius: 5px;
 	position: relative;
@@ -141,4 +141,86 @@ a:hover {
 .reg-account a {
 	color: #1bc272;
 	font-size: 18px;
+}
+
+/****用户注册信息完善****/
+.content-per {
+	width: 1200px;
+	height: 680px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin: -460px 0 0 -600px;
+	z-index: 701;
+	display: block;	
+}
+/*添加头像*/
+.my-pic {
+	text-align: center;
+	padding-top: 30px;
+}
+.my-pic p {
+	font-size: 16px;
+	margin-top: 10px;
+}
+/*上传头像*/
+.imghead {
+    position: relative;
+    display: inline-block;
+}
+.imghead input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: 0;
+}
+.imghead .previewImg{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+/*完善内容*/
+#per-shortcut {
+    width: 530px;;
+    text-align: center;
+    margin: 0 auto;
+}
+.content-per .form-group {
+	display: block;
+    float: left;
+    height: 34px;
+    line-height: 30px;
+	margin-top: 30px;
+}
+.form-group .radio {
+    float: left;
+    margin-left: 50px;
+}
+#per-shortcut .control-label {
+    font-size: 18px;
+    color: #323232;
+}
+@media (min-width: 768px) {
+	.col-sm-10 {
+	    width: 53.33333333%;
+	}
+}
+/*注册完成按钮*/
+.per-btn {
+    width: 180px;
+    height: 55px;
+    font-size: 18px;
+    background-color: #1bc272;
+    border-radius: 5px;
+    position: relative;
+    left: -75px;
+}
+/*跳过*/
+.skip a {
+	color: #323232;
+	font-size: 14px;
 }
