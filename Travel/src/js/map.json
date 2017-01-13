@@ -1,0 +1,93 @@
+	[
+	
+		
+		{
+			"lng":116.417854,
+			"lat":39.921988,
+			"url":"house_detail.html",
+			"title":"居家游1",
+			"src":"../images/house/fangyuan_01.png",
+			"site":"地址：北京市东城区东华门大街1",
+			"price":200,
+			"id":101
+			
+		},
+		{
+			"lng":116.406605,
+			"lat":39.921585,
+			"url":"house_detail.html",
+			"title":"居家游2",
+			"src":"../images/house/fangyuan_02.png",
+			"site":"地址：北京市东城区东华门大街2",
+			"price":200,
+			"id":102
+			
+		},
+		{
+			"lng":117.318188,
+			"lat":31.883793,
+			"url":"house_detail.html",
+			"title":"居家游3",
+			"src":"../images/house/fangyuan_03.png",
+			"site":"地址：北京市东城区东华门大街3",
+			"price":300,
+			"id":103
+			
+		},
+		{
+			"lng":117.270314,
+			"lat":31.836783,
+			"url":"house_detail.html",
+			"title":"居家游4",
+			"src":"../images/house/fangyuan_04.png",
+			"site":"地址：北京市东城区东华门大街4",
+			"price":400,
+			"id":104
+			
+		},
+		{
+			"lng":117.282201,
+			"lat":31.895706,
+			"url":"house_detail.html",
+			"title":"居家游5",
+			"src":"../images/house/fangyuan_05.png",
+			"site":"地址：北京市东城区东华门大街5",
+			"price":500,
+			"id":105
+			
+		},
+		{
+			"lng":117.278131,
+			"lat":31.852094,
+			"url":"house_detail.html",
+			"title":"居家游6",
+			"src":"../images/house/fangyuan_06.png",
+			"site":"地址：北京市东城区东华门大街6",
+			"price":600,
+			"id":106
+			
+		},
+		{
+			"lng":117.277572,
+			"lat":31.855833,
+			"url":"house_detail.html",
+			"title":"居家游7",
+			"src":"../images/house/fangyuan_07.png",
+			"site":"地址：北京市东城区东华门大街7",
+			"price":700,
+			"id":107
+			
+		},
+		{
+			"lng":117.294754,
+			"lat":31.86692,
+			"url":"house_detail.html",
+			"title":"居家游8",
+			"src":"../images/house/fangyuan_08.png",
+			"site":"地址：北京市东城区东华门大街8",
+			"price":800,
+			"id":108
+			
+		}
+		
+	]
