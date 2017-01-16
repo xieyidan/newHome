@@ -42,7 +42,7 @@ $(function() {
 										'<div class="house-name">当前房源</div>'+
 										'<div class="dl-close"><img src="images/guanbi_icon.png" width="" alt="关闭意见反馈"></div>'+
 										'<a href="javascript:void(0);">'+
-											'<img src="img/house/fangyuan_01.png" alt="居家游房源图">'+
+											'<img src="images/house/fangyuan_01.png" alt="居家游房源图">'+
 											'<p>翠湖高档小区超大三居室</p>'+
 											'<span class="td_Price">￥<samp>388</samp>/晚</span>'+
 										'</a>'+

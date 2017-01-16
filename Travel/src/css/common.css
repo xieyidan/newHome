@@ -31,12 +31,11 @@ textarea {
 	display: inline-block;
 	*display: inline;
 	*zoom:1; 
-	width: 16px; 
-	height: 16px; 
+	width: 14px; 
+	height: 14px; 
 	vertical-align: middle; 
 	background:url(img/xuanxiang_icon.png) no-repeat; 
 	margin-right: 8px; 
-	margin-top: 2px;
 	vertical-align: middle;
 }
 .checkbox ins{
@@ -55,13 +54,13 @@ textarea {
 	background-position: -72px 0px;
 }
 .radio ins{
-	background-position: -61px 0px; 
+	background-position: -62px 0px; 
 }
 .radio .hover{
-	background-position: -95px 0px;
+	background-position: -92px 0px;
 }
 .radio .checked{
-	background-position: -95px 0px;
+	background-position: -90px 0px;
 }
 .radio .enable{
 	background-position: -214px 0px;
@@ -275,7 +274,7 @@ textarea {
 	width: 260px;
 	height:50px;
 	border-bottom:1px solid #f1efef;
-	font-size:22px;
+	font-size: 18px;
 	text-align:center;
 	color:#323232;
 }
@@ -283,7 +282,7 @@ textarea {
 .yj_fk{
 	width:260px;
 	height:142px;
-	font-size: 16px;
+	font-size: 14px;
 	color: #646464;
 	background:#f2f3f5;
 	padding: 20px 10px;
@@ -294,7 +293,7 @@ textarea {
 .dh{
 	width:260px;
 	height:85px;
-	font-size: 16px;
+	font-size: 14px;
 	color: #646464;
 	background:#f2f3f5;
 	padding: 20px 10px;
@@ -304,10 +303,10 @@ textarea {
 }
 
 .yijian_btn{
-	width:200px;
-	height:40px;
+	width: 170px;
+	height: 34px;
 	color:#FFF;
-	font-size:18px;
+	font-size: 14px;
 	background:#1bc272;
 	border-radius: 5px;
 	border:none;
@@ -385,7 +384,7 @@ textarea {
 .login-no{
 	width: 260px;
 	height:200px;
-	font-size:22px;
+	font-size: 18px;
 	text-align:center;
 	color:#323232;
 	line-height: 300px;
@@ -393,11 +392,11 @@ textarea {
 }
 
 .remind-btn{
-	width:200px;
-	height:40px;
-	color:#FFF;
-	font-size:18px;
-	background:#1bc272;
+	width: 170px;
+	height: 34px;
+	color: #fff;
+	font-size: 14px;
+	background: #1bc272;
 	border-radius: 5px;
 	border:none;
 	outline:none;
@@ -489,11 +488,11 @@ textarea {
 	display: block;
 }
 .news-btn{
-	width:200px;
-	height:40px;
-	color:#FFF;
-	font-size:18px;
-	background:#1bc272;
+	width: 170px;
+	height: 34px;
+	color: #fff;
+	font-size: 14px;
+	background: #1bc272;
 	border-radius: 5px;
 	border:none;
 	outline:none;
@@ -513,13 +512,6 @@ textarea {
 	position:absolute;
 	display: none;
 }
-.infor-left {
-	width: 726px;
-	height: 500px;
-	background: #fff;
-	overflow:hidden;
-	position:absolute;
-}
 .infor-word {
 	float: left;
 	width: 140px;
@@ -538,7 +530,7 @@ textarea {
 	display: block;
 	text-align: center;
 	line-height: 38px;
-	font-size: 18px;
+	font-size: 16px;
 	color: #323232;
 }
 .contact {
@@ -546,7 +538,7 @@ textarea {
 	height: 42px;
 	background: #d5dbdd;
 	color: #323232;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	line-height: 42px;
 }
@@ -578,18 +570,18 @@ textarea {
 .fd-Name {
 	display: block;
 	color: #323232;
-	font-size: 16px;
+	font-size: 14px;
 }
 .msg-info {
 	display: block;
 	color: #323232;
-	font-size: 14px;
+	font-size: 12px;
 	line-height: 20px;
 }
 .fk-Name {
 	display: block;
 	color: #323232;
-	font-size: 16px;
+	font-size: 14px;
 }
 .fk-right {
 	float: right;
@@ -617,10 +609,11 @@ textarea {
 	width: 277px;
 	height: 90px;
 	color: #808080;
-	font-size: 14px;
+	font-size: 12px;
 	border: 2px solid #d6d7dc;
 	padding: 10px 10px;
 	margin-top: 10px;
+	margin-left: 10px;
 }
 .send_btn {
 	float: right;
@@ -640,11 +633,12 @@ textarea {
 	
 }
 .house-name {
-	width: 250px;
+	width: 248px;
 	height: 42px;
-	font-size: 20px;
+	font-size: 18px;
 	color: #323232;
 	line-height: 42px;
+	text-align: center;
 	font-weight: bold;
 	background: #d5dbdd;
 	clear: both;
