@@ -71,10 +71,18 @@ $(function () {
 		$("body").css("overflow","visible"); //显示body
 	});
 	
+	//判断是否已经登录
 	//已登录，注册
 	//用户头像下拉
-	$(".user-img a img").on("click",function(){
-		$(".fk-pulldown").toggle();
+	$(".user-img a img").on("mouseenter",function(){
+		$(".fk-pulldown").show();
+	}).on("mouseleave",function(){
+		$(".fk-pulldown").hide();
+	});
+	$(".fk-pulldown").on("mouseenter",function(){
+		$(".fk-pulldown").show();
+	}).on("mouseleave",function(){
+		$(".fk-pulldown").hide();
 	});
 	//登录、未登录
 	$(".btn").on("click",function(e){
@@ -92,13 +100,30 @@ $(function () {
 	});
 	
 	//我是房东
-	$(".login a").on("click",function(){
-		$(".fd-pulldown").toggle();
+	var fasg = true;
+	$(".login a").on("mouseenter",function(){
+		
+		//未开通
+		if (!fasg) {
+			$(".fd-pulldown").show();
+		}else{
+			$(".fd-dredge").show();
+		}
+		
+	}).on("mouseleave",function(){
+		//未开通
+		if (!fasg) {
+			$(".fd-pulldown").hide();
+		}else{
+			$(".fd-dredge").hide();
+		}
+		
 	});
+	
 	//我要开通
 	$(".my-dredge").on("click",function(){
 		$(".fd-pulldown").css("display","none");
-		$(".fd-dredge").toggle();
+		
 		$(".login a").on("click",function(){
 			$(".fd-dredge").toggle();
 			$(".fd-pulldown").toggle();

@@ -32,7 +32,7 @@
 			
 		}else if(index == 0){
 			index = 1;
-			thumbPic.children("li").eq(index-1).css({opacity:1}).siblings().css({opacity:0.5});
+			thumbPic.children("li").eq(index-1).animate({opacity:1}).siblings().animate({opacity:0.5});
 		}
 		index--;
 		
@@ -47,7 +47,7 @@
 			
 		}else if(index == len-1) {
 			index =len-2;
-			thumbPic.children("li").eq(index).css({opacity:1}).siblings().css({opacity:0.5});
+			thumbPic.children("li").eq(index).animate({opacity:1}).siblings().animate({opacity:0.5});
 		}
 		
 	});
@@ -65,8 +65,8 @@
 		}else if(index < 0){
 			index = len - 1;
 		}
- 		LargePic.children("li").eq(index).css({opacity:1}).siblings().css({opacity:0});
- 		thumbPic.children("li").eq(index).css({opacity:1}).siblings().css({opacity:0.5});
+ 		LargePic.children("li").eq(index).animate({opacity:1}).siblings().animate({opacity:0});
+ 		thumbPic.children("li").eq(index).animate({opacity:1}).siblings().animate({opacity:0.5});
 	}
    
 
