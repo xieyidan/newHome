@@ -183,7 +183,7 @@ a {
 .order-money {
 	float: right;
 	padding-top: 9px;
-	padding-right: 137px;
+	padding-right: 126px;
 }
 .order-money p a {
 	display: block;
@@ -327,7 +327,7 @@ a {
 .close-btn {
 	margin-top: 20px !important;
 }
- /*****入住确定弹框********/
+ /*****入住确定弹框******/
 .txt-num p {
 	display: inline-block;
 }
@@ -339,7 +339,131 @@ a {
 .order-content2 p {
 	line-height: 24px;
 }
-/**房客评价**/
+/*****评价房东*****/
+#order-eval {
+	width: 48%;
+	margin: 0 auto;
+}
+/*评价项*/
+.eval-box {
+	padding:0 10px;
+}
+.eval-item {
+	float: left;
+	width: 65%;
+}
+.eval-item span {
+	text-align: right;
+}
+/*评价房源*/
+.eval-house {
+	float: left;
+	width: 35%;
+}
+.eval-house p {
+	padding-top: 5px;
+}
+.house-img {
+	width: 295px;
+	height: 160px;
+	margin-top: 7px;
+	margin-bottom: 4px;
+}
+.house-img img {
+	width: 100%;
+	height: 100%;
+}
+/*评价内容*/
+.eval-content {
+	width: 100%;
+	margin-top: 40px;
+}
+.eval-content p {
+	float: left;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.eval-content p span {
+	display: block;
+}
+.eval-text {
+	display: inline-block;
+	width: 370px;
+	height: 54px;
+	color: #646464;
+	padding: 5px;
+	border: 2px solid #ccc;
+}
+/*上传图片*/
+.upload-box {
+	width: 100%;
+	margin-top: 15px;
+}
+.filed {
+	cursor: pointer;
+	width: 105px;
+	height: 34px;
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+    background: #1bc272;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    z-index: 100;
+    margin-right: 20px;
+}
+.filed span {
+    color: #fff;
+    font-size: 14px;
+}
+.filed input {
+	width: 105px;
+	height: 34px;
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.filed img {
+	padding-left: 5px;
+	margin-top: 8px;
+	vertical-align: bottom;
+}
+.upload-pic {
+	display: inline-block;
+	vertical-align: middle;
+}
+.upload-pic li {
+	float: left;
+	width: 110px;
+	height: 64px;
+	margin-right: 10px;
+}
+.upload-pic li img {
+	width: 100%;
+	height: 100%;
+}
+.eval-btn {
+	width: 55%;
+	margin: 0 auto;
+}
+.eval-btn button {
+	display: inline-block;
+}
+/****联系房东弹框****/
+#order-contact {
+	width: 726px;
+	margin: 0 auto;
+}
+.contact-body {
+	padding: 0;
+}
+.td_Price samp {
+	color: #ff1a00;
+}
 /**查看评价**/
 #already-eval {
 	display: none;

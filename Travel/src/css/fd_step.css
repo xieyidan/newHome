@@ -17,8 +17,8 @@
 	display: inline-block;
 	*display: inline;
 	*zoom:1; 
-	width: 16px; 
-	height: 16px; 
+	width: 14px; 
+	height: 14px; 
 	vertical-align: middle; 
 	background:url(img/xuanxiang_icon.png) no-repeat; 
 	margin-right: 8px; 
@@ -43,10 +43,10 @@
 	background-position: -61px 0px; 
 }
 .radio .hover{
-	background-position: -95px 0px;
+	background-position: -91px 0px;
 }
 .radio .checked{
-	background-position: -95px 0px;
+	background-position: -91px 0px;
 }
 .radio .enable{
 	background-position: -214px 0px;
@@ -69,7 +69,7 @@
 .house-title {
 	width: 100%;
 	min-width: 1240px;
-	font-size: 22px;
+	font-size: 20px;
 	color: #fefefe;
 	text-align: center;
 	font-weight: bold;
@@ -300,6 +300,7 @@
 }
 .double-bed {
 	width: 60px;
+	    padding-left: 10px;
 }
 .bed-word {
 	padding:0 5px 0 5px;
@@ -308,7 +309,7 @@
 	margin-left: 300px;
 }
 .add-btn {
-	font-size: 16px;
+	font-size: 14px;
 	color: #fff;
 	padding: 2px 18px;
 	background: #1bc272;
@@ -608,10 +609,11 @@ textarea {
 }
 .filed img {
 	padding-left: 5px;
+	vertical-align: middle;
 }
 
 .sel-txt p {
-	font-size: 16px;
+	font-size: 14px;
 	color: #323232;
 	line-height: 27px;
 }
@@ -644,7 +646,7 @@ textarea {
 	font-size: 20px;
 	color: #323232;
 	font-family: 'Microsoft YaHei';
-	margin-top: 50px;
+	margin-top: 30px;
 	position: relative;
     left: 110px;
 }
@@ -801,7 +803,6 @@ textarea {
 }
 .deposit {
 	margin-left: 22px;
-	margin-top: 70px;
 }
 .pay {
 	margin-left: -17px;
@@ -817,9 +818,9 @@ textarea {
 	float: left;
 }
 .img-1 {
-	width: 146px;
-	height: 85px;
-	background: url(img/zhengchangtk_bg_img.png) no-repeat;
+	width: 106px;
+	height: 68px;
+	background: url(img/tuikuan_background_img.png) no-repeat;
 	position: relative;
     left: 60px;
     top: 20px;
@@ -828,14 +829,14 @@ textarea {
 	display: block;
 	color: #fff;
 	line-height: 25px;
-	padding-left: 25px;
+	padding-left: 10px;
 }
 .img-2 {
-	width: 177px;
+	width: 162px;
 	height: 84px;
-	background: url(img/kouqian_bg_img.png) no-repeat;
+	background: url(img/koukuanqian_background_img.png) no-repeat;
 	position: relative;
-    left: 189px;
+    left: 205px;
 }
 .day-no {
 	width: 56px;
@@ -845,11 +846,11 @@ textarea {
 	padding-left: 20px;
 }
 .img-3 {
-	width: 177px;
+	width: 190px;
 	height: 84px;
-	background: url(img/kouqian_bg_img.png) no-repeat;
+	background: url(img/koukuanhou_background_img.png) no-repeat;
 	position: relative;
-    left: 315px;
+    left: 365px;
 }
 .success {
 	color: #323232;

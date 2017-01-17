@@ -29,12 +29,12 @@
 }
 /***加入我们***/
 .join-us {
-	font-size: 24px;
+	font-size: 20px;
 	text-align: center;
 	padding-top: 56px;
 }
 .cont {
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
 }
 .fa-name {
@@ -48,16 +48,17 @@
 	height: 25px;
 	border: none;
 	outline: none;
-	border-bottom: 2px solid #323232;
+	border-bottom: 2px solid #ccc;
 	margin-left: 10px;
 }
 .cont select {
 	width: 190px;
 	height: 36px;
+	font-size: 14px;
 	text-align: center;
 	position: relative;
 	top: 15px;
-    border: 2px solid #323232;
+    border: 2px solid #ccc;
 	padding-left: 30px;
 }
 .cont select:nth-of-type(2), .cont select:nth-of-type(3) {
@@ -74,20 +75,20 @@
 	padding-right: 48px;
 }
 .fd-address small {
-	font-size: 20px;
+	font-size: 18px;
 	color: #323232;
 	position: absolute;
-    bottom: 138px;
-    left: 369px;
+    bottom: 147px;
+    left: 372px;
 }
 /***提交按钮***/
 .fd-btn {
 	width: 156px;
 	height: 42px;
-	font-size: 21px;
+	font-size: 18px;
 	color: #fefefe;
 	text-align: center;
-	background: #2cb16f;
+	background: #1bc272;
 	border: none;
 	outline: none;
 	position: absolute;
