@@ -52,7 +52,7 @@
 		 		});
 					
 		 	}, error: function (error) {
-		        console.log("加载失败，请检查网络或其他原因");
+		        alert("加载失败，请检查网络或其他原因");
 		    }
 		})
 
@@ -64,7 +64,7 @@
 				  }; 
 		// 移入/移出房源列表添加/删除标注
 	    for(var i = 0; i < picListLi.length; i++){  
-          	picListLi[i].count = i;  
+          	picListLi[i].count = i; 
           	picListLi[i].onmouseenter = function(){  
                console.log(this.count+"移入");
 //              var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
@@ -78,16 +78,17 @@
                console.log(this.count+"移出");     
           	}    
         }   
+        var index1 = true;
 		
 		function addClickHandler(content,marker){  //点击弹出信息窗口函数
 			marker.addEventListener("click",function(e){
 				openInfo(content,e);
-				console.log($(this)[0].NA.lng)
 				var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
-				var marker2 = new BMap.Marker(new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),{icon:myIcon});  // 创建本地标注
+				var marker2 = new BMap.Marker(new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),{icon:myIcon});// 创建本地标注
 				map.addOverlay(marker2);//将本地标注添加到地图中   
 				map.setViewport({center:new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),zoom:15}) //不清楚
 				addClickHandler(content,marker2); //不清楚
+				
 				//图片加载完毕重绘infowindow
 //			   document.getElementById('imgDemo').onload = function (){
 //				   infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
@@ -102,18 +103,13 @@
 			map.openInfoWindow(infoWindow,point); //开启信息窗口
 		}
 		
-		
-	
-		
-		
 	}  
 		   
 	function loadScript() {  
 	  var script = document.createElement("script");  
 	  script.src = "http://api.map.baidu.com/api?v=2.0&ak=0SVvgq8BvSx7ObWfudubOabkSIuUTWLi&callback=initialize";//此为v2.0版本的引用方式  
 	  document.body.appendChild(script);  
-	}  
-	   
+	}  	   
 	window.onload = loadScript;  
 	
 
