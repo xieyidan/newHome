@@ -182,7 +182,12 @@ $(function(){
 		 $(this).css("background","url(css/img/QQ_icon_dianji.png)");
 	  });
 	  
-	//鼠标移如图片动态放大效果
+	  //短租房、热门旅游地跳转
+	  $('#search').on("click",function(){
+	  	window.location.href = "html/search_list.html";
+	  })
+	  
+	//鼠标移入图片动态放大效果
 	var imgRoom = $('.img-room');
 	var homeImg = $('.homg-img');
 	for(var i=0; i<homeImg.length; i++){

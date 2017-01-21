@@ -68,6 +68,9 @@
     });
 	
 	//床数
+	var bedDetails = $(".bed-details");
+	
+	
 	//双人床 添加床数按钮
 	$("#D-btn").on("click",function(){
 		var twoTitle = $("#DTitle").text();
@@ -191,7 +194,7 @@
 			$(this).parent(".bed-li").remove();
 		});
 	});
-	
+	console.log(bedDetails.find("li").length)
 	
 	
 	//房源别名
