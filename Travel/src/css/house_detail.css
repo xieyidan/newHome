@@ -269,7 +269,6 @@ img {
 }
 /*预定时间，房源套数*/
 .reserve-box {
-	display: inline-block;
 	margin-top: 20px;
 }
 .reserve-time {
@@ -297,6 +296,18 @@ img {
 .time-prompt {
 	display: block;
 	height: 35px;
+}
+/*房源打折情况*/
+.house-full {
+	width: 330px;
+	line-height: 22px;
+	padding-top: 5px;
+	padding-left: 5px;
+	margin-bottom: 20px;
+}
+.house-full a {
+	color: #ff6a51;
+	padding-right: 10px;
 }
 /*预定按钮*/
 .reserve-btn {
@@ -336,7 +347,7 @@ img {
 .contact-fd {
 	width: 403px;
 	border-top: 2px solid #e6e6e6;
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 .fd-pic {

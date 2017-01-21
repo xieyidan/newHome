@@ -40,7 +40,7 @@ a {
 	padding-top: 2px;
 	vertical-align: text-top;
 }
-/*我的订单*/
+/*左侧列表*/
 .nav-cont {
 	text-align: center;
 	background: #fff;
@@ -1110,12 +1110,28 @@ select:nth-of-type(2),select:nth-of-type(3) {
 	display: block;
 }
 /***********右侧——分享优惠***********/
-.share-pic {
-	height: 374px;
-}
-.share-pic img {
+.share-box {
 	width: 100%;
-	height: 100%;
+	min-width: 1240px;
+	height: auto;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.share-pic {
+	width: 100%;
+	height: 676px;
+	background:url(img/share_img.png) no-repeat;
+}
+/*分享的方式*/
+.share-way {
+	position: relative;
+    top: 590px;
+	width: 340px;
+	margin: 0 auto;
+}
+.share-way a {
+	display: inline;
+	padding-right: 50px;
 }
 
 /***********弹框***********/
