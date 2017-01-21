@@ -271,12 +271,13 @@ img {
 .reserve-box {
 	display: inline-block;
 	margin-top: 20px;
+	position: relative;
 }
 .reserve-time {
 	float: left;
 	display: inline-block;	
-	width: 290px;
-	height: 56px;
+
+	line-height: 50px;
 	background: #f2f2f2;
 }
 .times {
@@ -288,11 +289,13 @@ img {
 	padding-left: 20px;
 }
 .reserve-num {
+	display: inherit;
 	width: 92px;
 	height: 32px;
 	background-color: #fff;
-	margin-left: 26px;
-	margin-top: 10px;
+	position: absolute;
+	top: 78px;
+	margin-left: 305px;
 }
 .time-prompt {
 	display: block;

@@ -45,9 +45,8 @@
 						"</div>"+
 						"</a>"+"</div>";	
 					map.addOverlay(marker); // 将标注添加到地图中
-					map.setViewport({center:new BMap.Point(item.lng,item.lat),zoom:15}) //不清楚
-					addClickHandler(content,marker); //不清楚
-					
+					map.setViewport({center:new BMap.Point(item.lng,item.lat),zoom:15}) //
+					addClickHandler(content,marker); //
 					
 		 		});
 					
@@ -62,33 +61,19 @@
 					enableMessage:true,//设置允许信息窗发送短息
 					offset:{width:0,height:-25}
 				  }; 
-		// 移入/移出房源列表添加/删除标注
-	    for(var i = 0; i < picListLi.length; i++){  
-          	picListLi[i].count = i; 
-          	picListLi[i].onmouseenter = function(){  
-               console.log(this.count+"移入");
-//              var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
-//				var marker2 = new BMap.Marker(new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),{icon:myIcon});  // 创建本地标注
-//				map.addOverlay(marker2);//将本地标注添加到地图中   
-//				map.setViewport({center:new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),zoom:15}) //不清楚
-//				addClickHandler(content,marker2); //不清楚
-               
-          	}  
-          	picListLi[i].onmouseleave = function(){  
-               console.log(this.count+"移出");     
-          	}    
-        }   
-        var index1 = true;
-		
+
 		function addClickHandler(content,marker){  //点击弹出信息窗口函数
 			marker.addEventListener("click",function(e){
+			
 				openInfo(content,e);
 				var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
 				var marker2 = new BMap.Marker(new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),{icon:myIcon});// 创建本地标注
-				map.addOverlay(marker2);//将本地标注添加到地图中   
-				map.setViewport({center:new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),zoom:15}) //不清楚
-				addClickHandler(content,marker2); //不清楚
-				
+				map.addOverlay(marker2);//将本地标注添加到地图中 
+//				var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
+//				var marker2 = new BMap.Marker(new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),{icon:myIcon});// 创建本地标注
+//				map.addOverlay(marker2);//将本地标注添加到地图中   
+//				map.setViewport({center:new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),zoom:15}) //不清楚
+//				addClickHandler(content,marker2); //不清楚
 				//图片加载完毕重绘infowindow
 //			   document.getElementById('imgDemo').onload = function (){
 //				   infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
@@ -103,6 +88,23 @@
 			map.openInfoWindow(infoWindow,point); //开启信息窗口
 		}
 		
+		// 移入/移出房源列表添加/删除标注
+	    for(var i = 0; i < picListLi.length; i++){  
+          	picListLi[i].count = i; 
+          
+          	picListLi[i].onmouseenter = function(){  
+               console.log(this.count+"移入");
+//              var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
+//				var marker2 = new BMap.Marker(new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),{icon:myIcon});  // 创建本地标注
+//				map.addOverlay(marker2);//将本地标注添加到地图中   
+//				map.setViewport({center:new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),zoom:15}) //不清楚
+//				addClickHandler(content,marker2); //不清楚
+               
+          	}  
+          	picListLi[i].onmouseleave = function(){  
+               console.log(this.count+"移出");     
+          	}    
+        }   
 	}  
 		   
 	function loadScript() {  
