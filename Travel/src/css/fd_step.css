@@ -79,6 +79,9 @@
 	
 }
 /********************上传房源步骤一***********************/
+select {
+	height: 34px;
+}
 .progress_box {
 	width: 1240px;
 	margin: 40px auto;
@@ -106,7 +109,7 @@
 	height: 50px;
 	line-height: 30px;
 	font-family: 'Microsoft YaHei';
-	margin-top: 20px;
+	margin-top: 10px;
 	position: relative;
     left: 110px;
 }
@@ -651,7 +654,7 @@ textarea {
     left: 110px;
 }
 .price-set input[type="text"],.price-set input[type="tel"], .price-set select{
-	height: 30px;
+	height: 34px;
 }
 .day-price {
 	width: 120px;
@@ -659,7 +662,7 @@ textarea {
 }
 .step-4 .sel-word {
 	position: absolute;
-    top: 35px;
+    top: 30px;
 	bottom: 20px;
     left: 77px;
     color: #f00;
@@ -682,21 +685,21 @@ textarea {
 .upto-prompt {
 	position: absolute;
     left: 80px;
-    top: 35px;
+    top: 30px;
     color: #f00;
 	font-size: 12px;
 }
 .least-prompt {
 	position: absolute;
     left: 122px;
-    top: 35px;
+    top: 30px;
     font-size: 12px;
     color: #f00;
 }
 .most-prompt {
 	position: absolute;
-    left: 455px;
-    top: 35px;
+    left: 440px;
+    top: 30px;
     color: #f00;
 	font-size: 12px;
 }
@@ -785,7 +788,7 @@ textarea {
 }
 .discount-txt {
 	position: absolute;
-	left: 129px;
+	left: 212px;
     top: 217px;
     font-size: 12px;
     color: #f00;
@@ -793,7 +796,7 @@ textarea {
 .prompt-word {
 	position: absolute;
 	left: 61px;
-    top: 35px;
+    top: 30px;
     font-size: 12px;
     color: #f00;
 }
