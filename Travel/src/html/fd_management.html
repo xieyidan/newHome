@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/reset.css" /><!--公共样式-->
     <link rel="stylesheet" href="../css/header_two.css" /><!--头部-->
     <link rel="stylesheet" href="../css/common.css" /><!--右侧悬浮-->
-    <link rel="stylesheet" href="../css/fd_manangement.css" /><!--右侧悬浮-->
+    <link rel="stylesheet" href="../css/fd_manangement.css" /><!--房东房源管理-->
     <link rel="stylesheet" href="../css/footer.css" /><!--底部-->
     <!--JS-->
     <script src="../assets/jquery.min.js"></script>
@@ -157,11 +157,11 @@
 					            	<div class="order-content">
 					            		<p>四度-工业风/环球中心新会展地铁口/<span>可停车</span></p>
 					            		<p class="fcolor">入住退房时间：<span>2017-1-05</span>至<span>2017-1-12</span>&nbsp;共<span>2</span>晚&nbsp;<span>2</span>套房</p>
-					            		<p class="fcolor fd-name">预订人：<span>房东呢称</span><span class="fd-contact"><img src="../images/user/lianxifangdong_icon.png" />离线留言</span><a class="look-contact">联系方式房客付款后可见</a></p>
+					            		<p class="fcolor fd-name">预订人：<span>房东呢称</span><span class="fd-contact" data-toggle="modal" data-target="#myModal-8"><img src="../images/user/lianxifangdong_icon.png" />离线留言</span><a class="look-contact">联系方式房客付款后可见</a></p>
 					            		<p class="fcolor">收款结算：线上支付<span>660</span>元，不含线下清洁费和停车费</p>
 					            		<p class="fcolor">入住人数：3人</p>
 					            	</div>
-					            	<div class="order-state"><a class="confirms">接单操作</a></div>
+					            	<div class="order-state"><a class="confirms" data-toggle="modal" data-target="#myModal-1">接单操作</a></div>
 					            	<div class="order-opera"><a class="order-detail-btn">订单详情 ></a></div>
 					            	<div class="order-money">
 					            		<p>房费： <span class="mcolor">￥660</span></p>
@@ -300,5 +300,216 @@
             </div>
         </div>
     </div>
+    
+    <!--我要退房( )弹框-->
+    <div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" id="order-off">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<p class="modal-title order-top" id="myModalLabel">
+						接单操作
+					</p>
+				</div>
+				<div class="modal-body">
+					<!--房源信息-->
+					<div class="order-list">
+    					<!--订单号-->
+    					<div class="goods-box clear">
+			            	<div class="txt-num">
+			            		<p class="goods-num">订单号：<span style="padding-right:15px;">123456789012</span></p>	
+			            		<p class="goods-time">下单时间：<span>2017-1-05 14:51:04</span></p>
+			            	</div>					               
+			            </div>
+			            <!--订单房源信息-->
+			            <div class="order-item">
+			            	<div class="order-img1"><img src="../images/house/fangyuan_04.png" alt="房源图"></div>
+			            	<div class="order-content1">
+			            		<p>房源名称：<span>环球中心新会展地铁口环球中心新会展地铁口地铁口</span></p>
+			            		<p>入住退房时间：<span>2017-1-05</span>至<span style="padding-right: 10px;">2017-1-12</span>共<span>2</span>晚&nbsp;<span>2</span>套</p>	
+			            		<p>入住人：房客昵称</p>
+			            		<div class="house-pay"><p>房费：<span>￥660</span></p> <p>线上押金：<span>200</span></p>  </div>         		
+			            	</div>
+			            </div>
+    			    </div>
+    			    <!--取消原因-->
+					<div class="reason-box">
+						<span class="reason">请选择：</span>
+						    <div class="reason-list">
+								<div class="radio" name="reason" value=""><ins></ins><span>接单</span></div>
+								<div class="radio" name="reason" value=""><ins></ins><span>不接单</span></div>	
+							</div>										
+						</ul>
+					</div>
+				</div>
+				<div class="modal-footer reason-btn">
+					<button type="button" class="ok-btn" data-dismiss="modal" aria-hidden="true">确定</button>
+					<button type="button" class="no-btn" >取消</button>
+				</div>												
+			</div>
+		</div>
+	</div>
+    <!--评价房客弹框-->
+    <div class="modal fade" id="myModal-7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" id="order-eval">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<p class="modal-title order-top" id="myModalLabel">
+						入住评价
+					</p>
+				</div>
+				<div class="modal-body">
+					<div class="eval-box clear">
+    					<!--评价项-->
+    					<div class="eval-item clear">
+			            	<div class="eval-cont">
+	    						<span style="padding-left: 14px;">总评分：</span>
+	    						<div class="eval-star">
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    						</div>
+	    					</div>
+	    					<div class="eval-cont">
+	    						<span>房间整洁度：</span>
+	    						<div class="eval-star">
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    						</div>
+	    					</div>
+	    					<div class="eval-cont">
+	    						<span>房东服务：</span>
+	    						<div class="eval-star">
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    						</div>
+	    					</div>
+	    					<div class="eval-cont">
+	    						<span style="padding-left: 14px;">交通位置：</span>
+	    						<div class="eval-star">
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    						</div>
+	    					</div>
+	    					<div class="eval-cont">
+	    						<span>设置环境：</span>
+	    						<div class="eval-star">
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    						</div>
+	    					</div>
+	    					<div class="eval-cont">
+	    						<span style="padding-left: 28px;">性价比：</span>
+	    						<div class="eval-star">
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    							<img src="../images/user/pingjia_moren_icon.png" />
+	    						</div>
+	    					</div>
+	    					<div class="eval-content clear">
+	    						<p><span>请输入想要</span><span>评价的内容</span></p>
+	    						<textarea class="eval-text">请填写评价</textarea>
+	    					</div>
+			            </div>
+			            <!--评价房源信息-->
+			            <div class="eval-house">
+			            	<p>入住的房源</p>
+			            	<div class="house-img"><img src="../images/house/fangyuan_04.png" alt="房源图"></div>
+			            	<div class="">
+			            		<p>房源名称：<span>环球中心新会展地铁口环球</span></p>
+			            		<p>订单总金额：<span>￥1660</span></p>			            		
+			            	</div>
+			            </div>
+    			    </div>
+    			    <!--上传图片-->
+					<div class="upload-box">
+						<p class="filed"><span>上传图片</span><img src="../images/user/tianjia_icon.png" alt="上传图片按钮">
+	                    	<input id="Uploading" type="file" multiple  />
+	                    </p>
+	                    <ul class="upload-pic">
+	                    	<li><img src="../images/house/fangyuan_04.png" alt="评价图"></li>
+	                    	<li><img src="../images/house/fangyuan_04.png" alt="评价图"></li>
+	                    	<li><img src="../images/house/fangyuan_04.png" alt="评价图"></li>
+	                    	<li><img src="../images/house/fangyuan_04.png" alt="评价图"></li>
+	                    	<li><img src="../images/house/fangyuan_04.png" alt="评价图"></li>
+	                    </ul>
+					</div>
+				</div>
+				<div class="modal-footer eval-btn">
+					<button type="button" class="ok-btn" data-dismiss="modal" aria-hidden="true">评价</button>
+					<button type="button" class="no-btn" >取消</button>
+				</div>												
+			</div>
+		</div>
+	</div>
+    <!--联系房东弹框-->
+    <div class="modal fade" id="myModal-8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" id="order-contact">
+				<!--<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+				</div>-->
+				<div class="modal-body contact-body">
+					<div class="contact-left">
+						<ul class="infor-word">
+							<div class="contact">最近联系人</div>
+							<li class="on"><a class="fd-Name" href="javascript:;">房东呢称</a></li>
+							<li class=""><a class="fd-Name" href="javascript:;">房东呢称</a></li>
+						</ul>
+						<div class="infor-right">
+							<div class="infor-center">
+								<div class="Chatting">
+									<div class="fd-left"><a class="fd-Name" href="javascript:;">房东呢称</a><div class="msg-info">聊天内容聊天内容</div></div>
+									<div class="fk-right"><a class="fk-Name" href="javascript:;">房客呢称</a><div class="msg-info">聊天内容聊天内容聊天内容</div></div>
+								</div>
+								<a class="chat-records" href="javascript:;">聊天记录</a>
+								<div class="import">
+									<textarea class="import-text" placeholder="请输入聊天内容"></textarea>
+								</div>
+								<div class="info_btn">
+									<button type="submit" class="send_btn" id="send_btn">发送</button>
+								</div>
+							</div>
+							<div class="fd-house">
+								<div class="house-name">当前房源</div>
+								<div class="dl-close"><img data-dismiss="modal" aria-hidden="true" src="../images/guanbi_icon.png" width="" alt="关闭意见反馈"></div>
+								<a href="javascript:;">
+									<img src="../images/house/fangyuan_04.png" alt="居家游房源图">
+									<p>翠湖高档小区超大三居室</p>
+									<span class="td_Price">￥<samp>388</samp>/晚</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					
+				</div>												
+			</div>
+		</div>
+	</div>
 </body>
 </html>

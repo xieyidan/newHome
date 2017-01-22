@@ -111,6 +111,16 @@ $(function(){
     $(".message-del").on("click",function(){
     	$(this).attr({"data-toggle":"modal","data-target":"#myModal-9"});
     });
+    //全选/反选
+    $("#sel-all").on("click",function(){
+    	if ($(this).attr("checked"))
+	    {
+	     $("input[name='chks']").attr("checked",false);
+	    }else{
+	     $("input[name='chks']").attr("checked",true);
+	    }
+    });
+    
 	/***右侧-个人信息***/
 	//添加头像
 	var previewImg = $('.previewImg');

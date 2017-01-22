@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/reset.css" /><!--公共样式-->
     <link rel="stylesheet" href="../css/header_two.css" /><!--头部-->
     <link rel="stylesheet" href="../css/common.css" /><!--右侧悬浮-->
-    <link rel="stylesheet" href="../css/fk_manage.css" /><!--房东房源管理-->
+    <link rel="stylesheet" href="../css/fk_manage.css" /><!--房客房源管理-->
     <link rel="stylesheet" href="../css/footer.css" /><!--底部-->
     <!--JS-->
     <script src="../assets/jquery.min.js"></script>
@@ -696,7 +696,7 @@
 	    					<p class="no-read">未读消息<span class="new-num">4</span>条</p>
 		    				<!--全选，批量删除-->
 		    				<div class="operate">
-		    					<a><input id="sel-all" type="checkbox" name="" />全选</a>
+		    					<a><input id="sel-all" type="checkbox"/>全选</a>
 		    					<a><img src="../css/img/shanchu_moren_icon.png" alt="批量删除">批量删除</a>
 		    					<a><img src="../css/img/biaozhu_moren_icon.png" alt="批量标记为已读">批量标记为已读</a>
 		    				</div>
@@ -704,7 +704,7 @@
 		    				<table class="message-list" border="0" cellpadding="0" cellspacing="0">
 		    					<tbody>
 		    						<tr>
-		    							<td><input class="chk" type="checkbox" name="" /></td>
+		    							<td><input class="chks" type="checkbox" name="chks" /></td>
 		    							<td class="message-cont">
 		    								<p class="bold">系统消息系统消息系统消息</p>
 		    								<p class="message-time"><span>2017-1-11</span><span>15:06:50</span></p>
@@ -712,7 +712,7 @@
 		    							<td><a class="message-del">删除</a></td>
 		    						</tr>
 		    						<tr>
-		    							<td><input class="chks" type="checkbox" name="" /></td>
+		    							<td><input class="chks" type="checkbox" name="chks" /></td>
 		    							<td class="message-cont">
 		    								<p>系统消息系统消息系统消息系统消息</p>
 		    								<p class="message-time"><span>2017-1-11</span><span>15:06:50</span></p>
@@ -720,7 +720,7 @@
 		    							<td><a class="message-del">删除</a></td>
 		    						</tr>
 		    						<tr>
-		    							<td><input class="chks" type="checkbox" name="" /></td>
+		    							<td><input class="chks" type="checkbox" name="chks" /></td>
 		    							<td class="message-cont">
 		    								<p>系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消系统消息系统消息
 		    								系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消系统消息系统消息统消</p>
@@ -729,7 +729,7 @@
 		    							<td><a class="message-del">删除</a></td>
 		    						</tr>
 		    						<tr>
-		    							<td><input class="chks" type="checkbox" name="" /></td>
+		    							<td><input class="chks" type="checkbox" name="chks" /></td>
 		    							<td class="message-cont">
 		    								<p>系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消系统消息系统消息
 		    								系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消系统消息系统消息统消</p>
@@ -1553,7 +1553,7 @@
 		</div>
 	</div>
 	<!--我要退房( )弹框-->
-   <div class="modal fade" id="myModal-4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal-4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content" id="order-off">
 				<div class="modal-header">
