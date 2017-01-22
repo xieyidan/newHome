@@ -1,6 +1,4 @@
-//;(function () {
 
-	
 
 	function initialize() {
 		
@@ -45,11 +43,11 @@
 						"</div>"+
 						"</a>"+"</div>";	
 					map.addOverlay(marker); // 将标注添加到地图中
-					map.setViewport({center:new BMap.Point(item.lng,item.lat),zoom:15}) //
-					addClickHandler(content,marker); //
+					marker.disableMassClear()
+					map.setViewport({center:new BMap.Point(item.lng,item.lat),zoom:15}); 
+					addClickHandler(content,marker); 
 					
-		 		});
-					
+		 		});					
 		 	}, error: function (error) {
 		        alert("加载失败，请检查网络或其他原因");
 		    }
@@ -60,57 +58,48 @@
 					height: 210,     // 信息窗口高度
 					enableMessage:true,//设置允许信息窗发送短息
 					offset:{width:0,height:-25}
-				  }; 
-
+			};
 		function addClickHandler(content,marker){  //点击弹出信息窗口函数
 			marker.addEventListener("click",function(e){
-			
-				openInfo(content,e);
-				var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
-				var marker2 = new BMap.Marker(new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),{icon:myIcon});// 创建本地标注
-				map.addOverlay(marker2);//将本地标注添加到地图中 
-//				var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
-//				var marker2 = new BMap.Marker(new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),{icon:myIcon});// 创建本地标注
-//				map.addOverlay(marker2);//将本地标注添加到地图中   
-//				map.setViewport({center:new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),zoom:15}) //不清楚
-//				addClickHandler(content,marker2); //不清楚
-				//图片加载完毕重绘infowindow
-//			   document.getElementById('imgDemo').onload = function (){
-//				   infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
-//			   };
+			map.clearOverlays();
+			openInfo(content,e);
+			var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
+			var marker2 = new BMap.Marker(new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),{icon:myIcon});// 创建本地标注
+			console.log($(this)[0].NA.lng,$(this)[0].NA.lat)
+			map.addOverlay(marker2);//将本地标注添加到地图中   
 			});
-			
 		}
+		map.addEventListener("click",function(){
+			console.log("点击")
+		})
 		function openInfo(content,e){ //信息窗口对象
 			var p = e.target;
 			var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
 			var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象 
 			map.openInfoWindow(infoWindow,point); //开启信息窗口
 		}
-		
 		// 移入/移出房源列表添加/删除标注
-	    for(var i = 0; i < picListLi.length; i++){  
+	    for(var i = 0; i < picListLi.length; i++){ 
+	    	var marker4; ;
           	picListLi[i].count = i; 
-          
           	picListLi[i].onmouseenter = function(){  
                console.log(this.count+"移入");
-//              var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
-//				var marker2 = new BMap.Marker(new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),{icon:myIcon});  // 创建本地标注
-//				map.addOverlay(marker2);//将本地标注添加到地图中   
-//				map.setViewport({center:new BMap.Point($(this)[0].NA.lng,$(this)[0].NA.lat),zoom:15}) //不清楚
-//				addClickHandler(content,marker2); //不清楚
-               
+                var myIcon = new BMap.Icon("../images/user/mudidi_xuanzhong_icon.png", new BMap.Size(30,70));//上传本地图标
+				var marker3 = new BMap.Marker(new BMap.Point(117.282201,31.895706),{icon:myIcon});  // 创建本地标注
+				map.addOverlay(marker3);//将本地标注添加到地图中   
+               marker4 = marker3;
           	}  
           	picListLi[i].onmouseleave = function(){  
-               console.log(this.count+"移出");     
+             	console.log(this.count+"移除");
+             	map.removeOverlay(marker4);
           	}    
         }   
 	}  
 		   
 	function loadScript() {  
-	  var script = document.createElement("script");  
-	  script.src = "http://api.map.baidu.com/api?v=2.0&ak=0SVvgq8BvSx7ObWfudubOabkSIuUTWLi&callback=initialize";//此为v2.0版本的引用方式  
-	  document.body.appendChild(script);  
+	   var script = document.createElement("script");  
+	   script.src = "http://api.map.baidu.com/api?v=2.0&ak=0SVvgq8BvSx7ObWfudubOabkSIuUTWLi&callback=initialize";//此为v2.0版本的引用方式  
+	   document.body.appendChild(script);  
 	}  	   
 	window.onload = loadScript;  
 	
@@ -120,4 +109,4 @@
 	
 
 
-//})();
+
