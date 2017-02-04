@@ -61,7 +61,7 @@ $(function(){
 		}
 		if($(this).text()=='评价房东')
 		{
-			$(this).attr({"data-toggle":"modal","data-target":"myModal-7"});
+			$(this).attr({"data-toggle":"modal","data-target":"#myModal-7"});
 		}
 		if($(this).text()=='立即支付')
 		{
