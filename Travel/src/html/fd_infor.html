@@ -63,7 +63,7 @@
                     <span>昵称</span>
                     <input class="fd-info" type="text" placeholder="请输入您的昵称"/>
                 </li>
-                <p class="common-prompt"></p>
+                <p class="common-prompt txt1"></p>
                 <li>
                     <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
                     <span>证件类型</span>
@@ -78,17 +78,15 @@
                 <li>
                     <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
                     <span>证件号码</span>
-                    <input class="fd-info" type="text" placeholder="请输入您的证件号码"/>                   
+                    <input class="id-number" type="text" placeholder="请输入您的证件号码"/>                   
                 </li>
-                <p class="common-prompt"></p>
-                 
+                <p class="common-prompt txt2"></p>
                 <li>
                     <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
                     <span>真实姓名</span>
-                    <input class="fd-info" type="text" placeholder="请输入您的真实姓名"/>
-                    
+                    <input class="my-name" type="text" placeholder="请输入您的真实姓名"/>
                 </li>
-                 <p class="common-prompt"></p>
+                 <p class="common-prompt txt3"></p>
                  <li class="cardimg">
                     <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
                     <span>手持证<small>件照片</small></span>
@@ -109,96 +107,94 @@
         <div class="cont-2" style="display:none;">
         <div class="select_tit">
             <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp><span>收款方式</span>
-            <select  class="select_xz" name="queryType" onchange="Cmd(this)">
+            <select  class="select_xz" name="queryType">
                 <option value="1" name="queryType"> 支付宝</option>
                 <option value="2" name="queryType"> 银行卡</option>
             </select>
+             <p class="price"></p>
+           
         </div>
-
     <div class="select_cont">
           <div id="div1">
             <ul>
-            <p class="price">使用支付宝，收款能实时到账</p>
-            <li><samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp><span>支付宝账号</span><input class="div1" type="text" placeholder="请输入您的支付宝账号"><p class="common-prompt"></p></li>
-            <li><samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp><span>支付姓名</span><input class="div1" type="text"><p class="common-prompt"></p></li>
+	            <li><samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp><span>支付宝账号</span><input class="div1 alipay-acct" type="text" placeholder="请输入您的支付宝账号"><p class="common-prompt alipay-txt1"></p></li>
+	            <li><samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp><span>支付姓名</span><input class="div1 alipay-name" type="text"><p class="common-prompt alipay-txt2"></p></li>
             </ul>
         </div>
     
         <div id="div2" style="display:none;">
             <ul>
-            <p class="price">银行卡转账很慢，推荐您使用支付宝方式！</p>
-            <li>
-            <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
-            <span>开户银行名称</span>
-             <select class="yh_name">
-                <option></option>
-                <option>中国建设银行</option>
-                <option>中国农业银行</option>
-                <option>中国工商银行</option>
-                <option>中国交通银行</option>
-             </select>
-             
-            <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
-            <span>开户银行省份</span>
-             <select class="yh_name">
-                <option></option>
-                <option>中国建设银行</option>
-                <option>中国农业银行</option>
-                <option>中国工商银行</option>
-                <option>中国交通银行</option>
-             </select>
-            </li>
-            
-            
-             <li>
-            <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
-            <span>开户银行城市</span>
-             <select class="yh_name">
-                <option></option>
-                <option>中国建设银行</option>
-                <option>中国农业银行</option>
-                <option>中国工商银行</option>
-                <option>中国交通银行</option>
-             </select>
-             
-            <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
-            <span>开户支行名称</span>
-             <select class="yh_name">
-                <option></option>
-                <option>中国建设银行</option>
-                <option>中国农业银行</option>
-                <option>中国工商银行</option>
-                <option>中国交通银行</option>
-             </select>
-            </li>
-            
-            
-            <li>
-                <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
-                <span>银行开户姓名</span>
-                <input class="yh_inp1" type="text"/>
-            </li>
-            
-            <li>
-                <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
-                <span>银行开户账号</span>
-                <input class="yh_inp2" type="text"/>
-            </li>
-            
-            <li>
-                <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
-                <span>再次确认账号</span>
-                <input class="yh_inp2" type="text"/>
-                <p class="common-prompt"></p>
-            </li>
-            
+	            <li>
+	            <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
+	            <span>开户银行名称</span>
+	             <select class="yh_name">
+	                <option></option>
+	                <option>中国建设银行</option>
+	                <option>中国农业银行</option>
+	                <option>中国工商银行</option>
+	                <option>中国交通银行</option>
+	             </select>
+	             
+	            <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
+	            <span>开户银行省份</span>
+	             <select class="yh_name">
+	                <option></option>
+	                <option>中国建设银行</option>
+	                <option>中国农业银行</option>
+	                <option>中国工商银行</option>
+	                <option>中国交通银行</option>
+	             </select>
+	            </li>
+	            
+	            
+	             <li>
+	            <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
+	            <span>开户银行城市</span>
+	             <select class="yh_name">
+	                <option></option>
+	                <option>中国建设银行</option>
+	                <option>中国农业银行</option>
+	                <option>中国工商银行</option>
+	                <option>中国交通银行</option>
+	             </select>
+	             
+	            <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
+	            <span>开户支行名称</span>
+	             <select class="yh_name">
+	                <option></option>
+	                <option>中国建设银行</option>
+	                <option>中国农业银行</option>
+	                <option>中国工商银行</option>
+	                <option>中国交通银行</option>
+	             </select>
+	            </li>
+	            
+	            
+	            <li>
+	                <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
+	                <span>银行开户姓名</span>
+	                <input class="yh_inp1" type="text"/>
+	            </li>
+	            
+	            <li>
+	                <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
+	                <span>银行开户账号</span>
+	                <input class="yh_inp2" type="text"/>
+	            </li>
+	            
+	            <li>
+	                <samp><img src="../images/user/bitian_icon.png" alt="必填项图片"></samp>
+	                <span>再次确认账号</span>
+	                <input class="yh_inp2" type="text"/>
+	                <p class="common-prompt"></p>
+	            </li>
             </ul>
         
         </div>
       </div>
       <div class="div_btn">
         <input class="btn_Return" type="button" value="上一步"/>
-        <input class="btn_next" type="button" value="保存,开始上传房源资料"/>
+        <input class="btn_next btn-Upload" type="button" value="保存,开始上传房源资料"/>
       </div>
       </div>
     </div>

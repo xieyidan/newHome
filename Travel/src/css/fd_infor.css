@@ -113,7 +113,7 @@
 	height: 34px;
 	padding-left: 10px;
 }
-.fd-info {
+.fd-info ,.id-number,.my-name,.alipay-txt {
 	width: 330px;
 	height: 34px;
 	padding-left: 10px;
@@ -124,6 +124,12 @@
 	color: #ff0000;
 	line-height: 25px;
 	padding-right: 100px;
+}
+.txt1,.txt3,.alipay-txt{
+	padding-left: 40px;
+}
+.alipay-txt2{
+	margin-left: -20px;
 }
 #cont-center li small {
 	font-size: 18px;
@@ -192,6 +198,9 @@
 	min-width: 1240px;
 	text-align: center;
 }
+.select_tit{
+	padding-bottom: 40px;
+}
 .select_tit span {
 	font-size: 18px;
 	padding-right: 20px;
@@ -210,10 +219,13 @@
 /*******************************切换显示内容************************************/
 /**********************************支付宝*******************************************/
 
-#div1 .price{
-	padding: 20px 128px 30px 0;
+.price{
+	display: block;
 	font-size: 16px;
-	color: #ff0000;
+	color: red;
+	height: 25px;
+	line-height: 25px;
+	padding-left: 165px;
 }
 /*.div1-word{
 	display: block;
