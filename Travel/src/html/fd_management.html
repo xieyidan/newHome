@@ -18,6 +18,46 @@
     <script src="../assets/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/fk_manage.js"></script>
+    <script src="../js/Commonality.js"></script><!--控件-->
+    <script>
+    	$(function(){
+    		//不接单
+    		$(".order-not").on("click",function(){
+    			$("#no-order").css("display","block");
+    		});
+    		//接单
+			$(".order-receive").on("click",function(){
+    			$("#no-order").css("display","none");
+    	    });
+    	    //不扣除
+    		$(".deduct-not").on("click",function(){
+    			$(".deduct").css("display","none");
+    		});
+    		//扣除
+			$(".deduct-ok").on("click",function(){
+    			$(".deduct").css("display","block");
+    	    });
+    	    //立即支付,入住确定,评价房东
+			$(".confirms").on("click",function(){
+				if($(this).text()=='接单操作')
+				{
+					$(this).attr({"data-toggle":"modal","data-target":"#myModal-1"});
+					
+				}
+				if($(this).text()=='退房操作')
+				{
+					$("#fd-order").css("display","none");
+					$(".check-out").css("display","block");
+					$(".r-color").css("background","#f2f2f2")
+				}
+				if($(this).text()=='查看评论')
+				{
+					
+				}		
+			});
+			
+    	});
+    </script>
 </head>
 <body>
 	<!--头部-->
@@ -116,7 +156,7 @@
     			<!--右侧内容_我的订单-->
     			<div class="right-cont item" id="item1">
 	    			<p class="r-color right-top"><span>我是房东 ></span><span class="my-order">订单中心 ></span><span>全部订单</span></p>
-	    			<div class="right-center">
+	    			<div class="right-center" id="fd-order">
 	    				<div class="fd-order">
 	    				    <ul class="centerTab">
 	    				    	<li>
@@ -161,10 +201,10 @@
 					            		<p class="fcolor">收款结算：线上支付<span>660</span>元，不含线下清洁费和停车费</p>
 					            		<p class="fcolor">入住人数：3人</p>
 					            	</div>
-					            	<div class="order-state"><a class="confirms" data-toggle="modal" data-target="#myModal-1">接单操作</a></div>
+					            	<div class="order-state"><a class="confirms">接单操作</a></div>
 					            	<div class="order-opera"><a class="order-detail-btn">订单详情 ></a></div>
 					            	<div class="order-money">
-					            		<p>房费： <span class="mcolor">￥660</span></p>
+					            		<p>房费： <input class="mcolor" value="￥660"></p>
 					            		<p><a>点击修改</a></p>
 					            		<p class="">线上押金 ：<span>￥200</span></p>
 					            	</div>
@@ -193,7 +233,7 @@
 					            	<div class="order-state"><a class="confirms">退房操作</a></div>
 					            	<div class="order-opera"><a class="order-detail-btn">订单详情 ></a></div>
 					            	<div class="order-money">
-					            		<p>房费： <span class="mcolor">￥660</span></p>
+					            		<p>房费： <input class="mcolor" value="￥660"></p>
 					            		<p><a>点击修改</a></p>
 					            		<p class="">线上押金 ：<span>￥200</span></p>
 					            	</div>
@@ -222,7 +262,7 @@
 					            	<div class="order-state"><a class="confirms">查看评价</a></div>
 					            	<div class="order-opera"><a class="order-detail-btn">订单详情 ></a></div>
 					            	<div class="order-money">
-					            		<p>房费： <span class="mcolor">￥660</span></p>
+					            		<p>房费： <input class="mcolor" value="￥660"> </p>
 					            		<p><a>点击修改</a></p>
 					            		<p class="">线上押金 ：<span>￥200</span></p>
 					            	</div>
@@ -237,6 +277,75 @@
 								<li><a href="#">1</a></li>
 							</ul>
 	    				</div>
+	    			</div>
+	    			<!--我的订单—退房处理-->
+	    			<div class="check-out">			
+    					<!--订单列表-->
+	    				<div class="goods-list">
+	    					<!--订单号，时间，状态-->
+	    					<div class="goods-box clear">
+				            	<div class="txt-left">
+				            		<p class="goods-num">订单号：<span style="padding-right:15px;">123456789012</span></p>
+				            		<p class="goods-time">下单时间：<span>2017-1-05 14:51:04</span></p>
+				            	</div>
+				            </div>
+				            <!--订单房源信息-->
+				            <div class="order-item">
+				            	<div class="order-img"><img src="../images/house/fangyuan_04.png" alt="房源图"></div>
+				            	<div class="order-content">
+				            		<p>四度-工业风/环球中心新会展地铁口/<span>可停车</span></p>
+				            		<p class="fcolor">入住退房时间：<span>2017-1-05</span>至<span>2017-1-12</span>&nbsp;共<span>2</span>晚&nbsp;<span>2</span>套房</p>
+				            		<p class="fcolor fd-name">预订人：<span>房东呢称</span>入住人数：3人</p>
+				            		<p class="fcolor">订单金额：￥800</p>
+				            		<p class="fcolor">线上押金：￥200</p>
+				            	</div>	
+				            </div>
+	    				</div>
+	    				<!--选择-->
+	    				<div>
+							<div class="reason-box">
+								<span class="reason">是否申请扣除线上押金</span>
+								    <div class="reason-list">
+										<div class="radio" name="reason" value=""><ins class="deduct-not"></ins><span>不扣除</span></div>
+										<div class="radio" name="reason" value=""><ins class="deduct-ok checked"></ins><span>扣除</span></div>	
+									</div>										
+								</ul>
+							</div>
+							<div class="deduct">
+								<div class="reason-box">
+									<span class="reason">扣除押金金额</span>
+									    <div class="reason-list">
+											<input class="cash-inp" type="text" />元
+										</div>										
+									</ul>
+								</div>
+								<div class="reason-box">
+									<span class="reason">扣除押金原因</span>
+									    <div class="reason-list">
+											<textarea class="deduct-rea"></textarea>
+										</div>										
+									</ul>
+								</div>
+								<!--上传图片-->
+								<div class="upload-box">
+									<p class="filed">
+										<span>上传图片</span>
+				                    	<input id="Uploading" type="file" multiple  />
+				                    </p>
+				                    <ul class="upload-pic">
+				                    	<li><img src="../images/house/fangyuan_04.png" alt="评价图"></li>
+				                    	<li><img src="../images/house/fangyuan_04.png" alt="评价图"></li>
+				                    	<li><img src="../images/house/fangyuan_04.png" alt="评价图"></li>
+				                    	<li><img src="../images/house/fangyuan_04.png" alt="评价图"></li>
+				                    	<li><img src="../images/house/fangyuan_04.png" alt="评价图"></li>
+				                    </ul>
+								</div>
+							</div>
+						</div>
+						<div class="reason-btn">
+							<button type="button" class="ok-btn" data-dismiss="modal" aria-hidden="true">确定</button>
+							<button type="button" class="no-btn" >取消</button>
+						</div>	
 	    			</div>
 	    		</div>
     		</div>
@@ -301,7 +410,7 @@
         </div>
     </div>
     
-    <!--我要退房( )弹框-->
+    <!--接单操作弹框-->
     <div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content" id="order-off">
@@ -334,13 +443,24 @@
 			            	</div>
 			            </div>
     			    </div>
-    			    <!--取消原因-->
+    			    <!--选择-->
 					<div class="reason-box">
-						<span class="reason">请选择：</span>
+						<span class="reason">请选择</span>
 						    <div class="reason-list">
-								<div class="radio" name="reason" value=""><ins></ins><span>接单</span></div>
-								<div class="radio" name="reason" value=""><ins></ins><span>不接单</span></div>	
+								<div class="radio" name="reason" value=""><ins class="order-receive"></ins><span>接单</span></div>
+								<div class="radio" name="reason" value=""><ins class="order-not"></ins><span>不接单</span></div>	
 							</div>										
+						</ul>
+					</div>
+					<!--不接单原因-->
+					<div class="reason-box" id="no-order">
+						<span class="reason">不接单原因</span>
+						    <div class="reason-list">
+								<div class="radio" name="reason" value=""><ins></ins><span>房源已出租</span></div>
+								<div class="radio" name="reason" value=""><ins></ins><span>这段时间不接待</span></div>
+								<div class="radio" name="reason" value=""><ins></ins><span>其他</span></div>
+								<div class="radio"><input class="off-reason" type="text" placeholder="请输入您取消订单的原因"></div>
+							</div>
 						</ul>
 					</div>
 				</div>
