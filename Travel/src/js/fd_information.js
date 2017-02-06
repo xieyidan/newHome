@@ -7,16 +7,6 @@
 			$(".fd-perinfo").css("background","url(../css/img/buzou_01.png)");
 			$(".line_span span:first").css("color","#1bc272");
 			
-//			//保存下一步
-//			$('.btn_next').on('click',function(event){
-//				$(".fd-perinfo").css("background","url(../css/img/buzou01.png)");
-//				$(".fd-gathering").css("background","url(../css/img/buzou_02.png)");
-//				$(".line_span span:first").css("color","#808080");
-//				$(".line_span span:last").css("color","#1bc272");
-//				
-//				$(".cont-1").css("display", "none");
-//				$(".cont-2").css("display", "block");
-//			});
 			
 			//上一步
 			$(".btn_Return").on("click",function(){
@@ -55,6 +45,7 @@
 		    	img.appendTo(fmImg)
 		    	
 			});
+			//bas64
 			function getObjectURL(file) {
 			    var url = null ; 
 			    if (window.createObjectURL!=undefined) { // basic
@@ -90,7 +81,7 @@
 					$(".price").delay(4000).fadeOut();
 					$(".select_tit").css("margin-right","126px");
 					$(".cont-2 .div_btn").css("margin-top", "230px");
-				}
+				};
 			});
 			//验证
 			var arr = [];
@@ -213,6 +204,8 @@
 			}else{
 				alert("跳转？？？")
 			}
-		})
+		});
+		
+
 	});
 })();
