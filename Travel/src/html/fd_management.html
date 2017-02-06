@@ -21,6 +21,17 @@
     <script src="../js/Commonality.js"></script><!--控件-->
     <script>
     	$(function(){
+    		/***左侧标题***/
+			$(".item:gt(0)").hide();  //隐藏class名为xl的索引大于0的元素
+			$(".nav-cont .current").click(function(){				
+				$(".nav-cont .current").removeClass("actives"); //移除其他元素样式
+				$(this).addClass("actives");  //添加当前元素样式
+				
+				var index=$(".nav-cont .current").index(this); //获取当前current的索引
+				$(".item").eq(index).siblings().hide(); //隐藏当前current索引下兄弟元素的内容
+				$(".item").eq(index).show(); //显示当前current索引下的内容
+			});
+			/***右侧-我的交易***/
     		//不接单
     		$(".order-not").on("click",function(){
     			$("#no-order").css("display","block");
@@ -48,12 +59,31 @@
 				{
 					$("#fd-order").css("display","none");
 					$(".check-out").css("display","block");
-					$(".r-color").css("background","#f2f2f2")
+					//标题
+					$(".right-top").css("background","#f2f2f2");
+					$(".title-name").html("退房处理");
 				}
 				if($(this).text()=='查看评论')
 				{
 					
 				}		
+			});
+			//我的交易
+			$(".my-order").on("click",function(){
+				$(".right-center").css("display","block"); //我的交易
+				$(".order-detail").css("display","none"); //订单详情
+				//标题
+				$(".right-top").css("background","#fff");
+				$(".title-name").html("我的订单");		
+				
+			});
+			//订单详情
+			$(".order-detail-btn").on("click",function(){
+				$(".right-center").css("display","none");
+				$(".order-detail").css("display","block");
+				//标题
+				$(".right-top").css("background","#f2f2f2");
+				$(".title-name").html("订单详情");
 			});
 			
     	});
@@ -114,7 +144,7 @@
     		<div class="left-cont">
     			<ul class="left-nav">
     				<li>
-    					<div class="nav-title" href="javascript:;"><img src="../images/user/gongzuotai_icon.png" alt="工作台图标"><span>工作台</span></div>
+    					<div class="nav-title" href="javascript:;"><img src="../images/user/gongzuotai_icon.png" alt="我的交易图标"><span>我的交易</span></div>
     					<div class="nav-cont">
     						<a class="current actives" href="javascript:;">我的订单</a>
     						<a class="current" href="javascript:;">结算管理</a>
@@ -155,7 +185,7 @@
     		<div class="right-box">
     			<!--右侧内容_我的订单-->
     			<div class="right-cont item" id="item1">
-	    			<p class="r-color right-top"><span>我是房东 ></span><span class="my-order">订单中心 ></span><span>全部订单</span></p>
+	    			<p class="r-color right-top" style="background: #fff;"><span>我是房东 ></span><span class="my-order">我的交易 ></span><span class="title-name">我的订单</span></p>
 	    			<div class="right-center" id="fd-order">
 	    				<div class="fd-order">
 	    				    <ul class="centerTab">
@@ -347,7 +377,193 @@
 							<button type="button" class="no-btn" >取消</button>
 						</div>	
 	    			</div>
-	    		</div>
+	    			<!--订单详情-->
+    		    	<div class="order-detail">
+    		    		<p class="fd-reply">当前订单状态：<span>房东拒单</span></p>
+    		    		<p>取消原因：<span>房源有其他安排</span></p>
+    		    		<!--房源信息-->
+						<div class="house-list">
+							<!--订单号-->
+							<div class="goods-box clear">
+				            	<div class="txt-num">
+				            		<p class="goods-num">订单号：<span style="padding-right:15px;">123456789012</span></p>	
+				            		<p class="goods-time">下单时间：<span>2017-1-05 14:51:04</span></p>
+				            	</div>					               
+				            </div>
+				            <!--订单房源信息-->
+				            <div class="order-item">
+				            	<div class="order-img"><img src="../images/house/fangyuan_04.png" alt="房源图"></div>
+				            	<div class="order-content">
+				            		<p>房源名称：<span>环球中心新会展地铁口环球中心新会展地铁口地铁口</span></p>
+				            		<p class="fcolor"><img src="../images/fangyuan_position.png">地址：<span>房源地址</span></p>
+				            		<p class="fcolor">入住退房时间：<span>2017-1-05</span>至<span>2017-1-12</span>&nbsp;&nbsp;共<span>2</span>晚&nbsp;&nbsp;<span>2</span>套</p>	
+				            		<p class="fname"><span>房东呢称</span><span class="fd-contact"><img src="../images/user/lianxifangdong_icon.png" />联系房东</span></p>
+				            		<p class="fpay"><span>订单金额：￥600</span><span>线上押金：￥200</span><span>入住人数：3人</span></p>
+				            	</div>
+				            </div>
+					   </div>
+					   <!--线上支付，退款-->
+					   <div class="pay-box">
+					   	    <!--线上支付-->
+					   	    <div class="online">
+					   	    	线上总收入						   	    	
+				   	    		<p class="all-money">应收房费总金额：<span>￥540</span></p>
+				   	    		<p class="them">其中：<span>订单金额：￥500</span><span>10%服务费：￥60</span><span>房客违约金：￥0</span><span class="tnem-sm">说明：线上总收入不含清洁费，停车费等线下收取费用</span></p>
+					   	    </div>
+					   	    <!--退款-->
+					   	    <div class="refund">
+					   	    	退款情况						   	    	
+				   	    		<p class="all-money">退款总金额：<span>￥350</span></p>
+				   	    		<p class="them">其中：
+				   	    			<span>房费退还：￥550</span>
+				   	    			<span class="tnem-sp">线上押金退还：￥100</span>
+				   	    			<span class="tnem-sp">扣除线上押金：￥50<b class="deduct-deposit">（扣除押金原因：有物品损坏，门把手）</b></span>	
+				   	    		</p>
+					   	    </div>
+					   	    <!--图片-->
+					   	    <div class="deduct-img">
+					   	    	<img src="../images/house/fangyuan_04.png" alt="房源图">
+					   	    	<img src="../images/house/fangyuan_04.png" alt="房源图">
+					   	    	<img src="../images/house/fangyuan_04.png" alt="房源图">
+					   	    	<img src="../images/house/fangyuan_04.png" alt="房源图">
+					   	    	<img src="../images/house/fangyuan_04.png" alt="房源图">
+					   	    </div>
+					   </div>
+					    <!--预订人信息-->
+					    <div class="booking">
+					    	预订人信息
+					    	<p>预订人昵称：<span>某某某</span></p>
+					    	<p>预订人姓名：<span>某某某</span></p>
+					    	<p>预订人电话：<span>12345612321</span></p>
+					    </div>
+					    <!--入住人信息-->
+					    <div class="stay-person">
+					    	<table class="table table-bordered">
+								<caption>入住人信息</caption>
+								<thead>
+									<tr>
+										<th>真实姓名</th>
+										<th>证件类型</th>
+										<th>证件号</th>
+										<th>手机号</th>
+										<th>性别</th>
+										<th>出生日期</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Tanmay</td>
+										<td>港澳通行证</td>
+										<td>147896532102136541</td>
+										<td>1415632145</td>
+										<td>男</td>
+										<td>1988-1-5</td>
+									</tr>
+									<tr>
+										<td>Tanmay</td>
+										<td>港澳通行证</td>
+										<td>147896532102136541</td>
+										<td>1415632145</td>
+										<td>男</td>
+										<td>1988-1-5</td>
+									</tr>
+									<tr>
+										<td>Tanmay</td>
+										<td>港澳通行证</td>
+										<td>147896532102136541</td>
+										<td>1415632145</td>
+										<td>男</td>
+										<td>1988-1-5</td>
+									</tr>
+								</tbody>
+							</table>
+					    </div>
+					    <!--居家游客服-->
+					    <p>居家游客服热线：<span class="hotline-tel">400-047-6667</span></p>
+    		    	</div>
+    			</div>
+    			<!--右侧内容_结算管理-->
+    			<div class="right-cont item">
+    				<p class="r-color right-top"><span>我是房东 ></span><span class="my-order">我的交易 ></span><span class="title-name">结算管理</span></p>
+    				<div class="right-account">
+    					<!--收入查询-->
+    					<div class="income-query">
+    						<span>收入查询</span>
+    						<label class="query-year">
+    							<select>
+	    							<option>2017</option>
+	    							<option>2016</option>
+	    						</select>
+	    						<span>年</span>
+    						</label>
+    						<label class="query-month">
+    							<select>
+	    							<option>1</option>
+	    							<option>2</option>
+	    						</select>
+	    						<span>月</span>
+    						</label>
+    						<select class="query-city">
+    							<option>全部房源</option>
+    							<option>贵州</option>
+    						</select>
+    					</div>
+    					<!--查询结果-->
+    					<div class="query-result">
+    						<span>2017年2月</span>
+    						<span>月度收入：￥1600元</span>
+    						<span>说明：订单收入在退房1天后结算</span>
+    					</div>
+    					<!--收入信息-->
+					    <div class="stay-person">
+					    	<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>真实姓名</th>
+										<th>证件类型</th>
+										<th>证件号</th>
+										<th>手机号</th>
+										<th>性别</th>
+										<th>出生日期</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Tanmay</td>
+										<td>港澳通行证</td>
+										<td>147896532102136541</td>
+										<td>1415632145</td>
+										<td>男</td>
+										<td>1988-1-5</td>
+									</tr>
+									<tr>
+										<td>Tanmay</td>
+										<td>港澳通行证</td>
+										<td>147896532102136541</td>
+										<td>1415632145</td>
+										<td>男</td>
+										<td>1988-1-5</td>
+									</tr>
+									<tr>
+										<td>Tanmay</td>
+										<td>港澳通行证</td>
+										<td>147896532102136541</td>
+										<td>1415632145</td>
+										<td>男</td>
+										<td>1988-1-5</td>
+									</tr>
+								</tbody>
+							</table>
+					    </div>
+    				</div>
+    			</div>
+    			<!--右侧内容_房源管理-->
+    			<div class="right-cont item">
+    				<p class="r-color right-top"><span>我是房东 ></span><span class="my-order">我的房源 ></span><span class="title-name">房源管理</span></p>
+    				<div class="house-manage">
+    					
+    				</div>
+    			</div>
     		</div>
     	</div>
     </div>

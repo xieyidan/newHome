@@ -90,7 +90,7 @@ $(function () {
 		$(".content-bg").css("display","none");
 		$(".mask-layer").css("display","none");
 		$(".fk").css("display","block");
-		$(".nolink").css("display","none");
+		$(".nolink").css("display","block");
 		$(".fd-pulldown").css("display","none");
 	});
 	//退出登录

@@ -63,6 +63,11 @@ a {
 	overflow: hidden;
 	background: #fff;
 }
+select,input {
+	height: 30px;
+	background: none;
+	
+}
 /***********右侧——我的订单***********/
 .all-order {
 	display: block;
@@ -73,6 +78,7 @@ a {
 /*房东选项的提示*/
 .right-top {
 	padding: 20px 10px;
+	background: #f2f2f2;
 }
 .right-top span{
 	color: #646464;
@@ -107,7 +113,7 @@ a {
 
 /*订单列表*/
 .right-center {
-	
+	display: block;
 	width: 100%;
 	background: #fff;
 	overflow: hidden; 
@@ -181,6 +187,11 @@ a {
 .fcolor span {
 	padding: 0 3px;
 }
+.fcolor img {
+    padding-left: 3px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
 .fd-name img {
 	padding-left: 20px;
 	padding-right: 10px;
@@ -193,6 +204,10 @@ a {
 /*联系房东*/
 .fd-contact {
 	cursor: pointer;
+}
+/*金额*/
+.fpay span {
+	padding-right: 20px;
 }
 
 /*订单操作\订单详情*/
@@ -260,10 +275,147 @@ a {
 	border-left: 1px solid #fff;
 	text-align: center;
 }
+/***********我的订单-订单详情***********/
+.order-detail {
+	display: none;
+	padding: 20px 0 40px 20px;
+}
+/*订单状态*/
+.fd-reply {
+	padding-bottom: 5px;
+}
+.fd-reply span {
+	color: #ff6a51;
+	padding-left: 5px;
+}
+/*订单房源列表*/
+.house-list {
+	padding-top: 10px;
+}
+.fname img {
+	padding-left: 20px;
+	padding-right: 10px;
+	vertical-align: middle;
+}
+/*线上支付*/
+.online {
+	padding: 10px 0 30px 0;
+}
+.online p {
+	display: inline-block;
+}
+.all-money {
+	padding-left: 20px;
+	padding-right: 57px;
+}
+.them {
+	vertical-align: text-top;
+}
+.them span {
+	padding-left: 10px;
+}
+.tnem-sm {
+	display: block;
+	padding-left: 5px !important;
+}
+.tnem-sp {
+	display: block;
+	padding-left: 56px !important;
+}
+/*退款*/
+.refund p {
+	display: inline-block;
+}
+.refund .all-money {
+	padding-left: 49px;
+	padding-right: 30px;
+}
+.deduct-deposit {
+	padding-left: 20px;
+}
+/*扣除原因的图片*/
+.deduct-img {
+	margin-top: 10px;
+}
+.deduct-img img {
+	width: 186px;
+	height: 104px;
+	margin-right: 15px;
+}
+/*预订人信息*/
+.booking {
+	padding: 30px 0;
+}
+.booking p {
+	display: inline-block;
+	padding: 0 20px;
+}
+/*入住人信息*/
+.table-bordered {
+    border: 2px solid #ddd;
+}
+.table {
+    width: 70%;
+    max-width: 70%;
+    margin-bottom: 40px;
+}
+caption {
+    text-align: left;
+    font-weight: normal;
+    padding-bottom: 5px;
+    vertical-align: middle;
+}
+.table-bordered>tbody>tr>td,.table-bordered>thead>tr>th {
+    border: 2px solid #ddd;
+}
+/*热线电话*/
+.hotline-tel {
+	color: #ff6a51;
+}
 
+/***********我的交易-结算管理***********/
+.right-account {
+	display: block;
+	width: 100%;
+	background: #fff;
+	padding: 20px 20px;
+	overflow: hidden; 
+}
+/*收人查询*/
+.income-query label {
+	padding-left: 10px;
+	padding-right: 20px;
+}
+.income-query label span {
+	padding-left: 5px;
+}
+.query-year select {
+	width: 76px;
+}
+.query-month select {
+	width: 50px;
+}
+.query-city {
+	width: 90px;
+	margin-left: 10px;
+}
+/*查询结果*/
+.query-result {
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+.query-result span {
+	padding-right: 30px;
+}
 
-
-
+/***********我的房源-房源管理***********/
+.house-manage {
+	display: block;
+	width: 100%;
+	background: #fff;
+	padding: 20px 20px;
+	overflow: hidden; 
+}
 
 
 

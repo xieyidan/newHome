@@ -14,10 +14,14 @@ $(function(){
 		$(".item").eq(index).show(); //显示当前current索引下的内容
 	});
 	/***右侧-全部订单***/
-	//我的订单
+	//我的订单，我的消息
 	$(".my-order").on("click",function(){
-		$(".all-order").css("display","block");
-		$(".order-detail").css("display","none");
+		$(".all-order").css("display","block"); //我的订单
+		$(".order-detail").css("display","none"); //订单详情
+		$("#already-eval").css("display","none"); //评论
+		//标题
+		$(".title-name").html("全部订单");		
+		
 	});
 	//点击小标题返回页面
 	$(".right-subtitle").on("click",function(){
@@ -65,13 +69,23 @@ $(function(){
 		}
 		if($(this).text()=='立即支付')
 		{
-			window.open("order_step3.html","_blank")
+			window.open("order_step3.html","_blank");
+		}
+		if($(this).text()=='查看已评论')
+		{
+			$(".all-order").css("display","none");
+		    $("#already-eval").css("display","block");
+			//标题
+		    $(".title-name").html("评价详情");
 		}
 	});
 	//订单详情
 	$(".order-detail-btn").on("click",function(){
 		$(".all-order").css("display","none");
 		$(".order-detail").css("display","block");
+		//标题
+		$(".title-name").html("订单详情");
+	
 	});
 	
 	/***右侧-聊天记录***/
