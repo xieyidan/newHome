@@ -62,7 +62,7 @@ $(function() {
 						  '</div>'+
 						  '<div class="my-remind distance">'+
 						      '<div class="my-news">我的消息</div>'+
-							  '<div class="dl-close"><img src="img/guanbi.png" alt="关闭意见反馈"></div>'+
+							  '<div class="dl-close"><img src="images/guanbi.png" alt="关闭意见反馈"></div>'+
 							  '<div class="my-list">'+
 						      '<a class="news-list">您有一个未支付订单，请立即支付！点击立即支付</a>'+
 							  '<a class="news-list">您上传的房源已通过审核，点击立即查看</a>'+

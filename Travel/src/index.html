@@ -20,18 +20,18 @@
     <link rel="stylesheet" href="css/login.css" /><!--登录-->
     <link rel="stylesheet" href="css/register.css" /><!--注册-->
     <link rel="stylesheet" href="css/pwd_Reset.css" /><!--重设密码-->
-    <!--<link rel="stylesheet" href="path/to/validator/jquery.validator.css"><!--验证-->-->
+    <!--<link rel="stylesheet" href="path/to/validator/jquery.validator.css"><!--验证-->
     <!--JS-->
     <script src="assets/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/jquery-1.9.0.min.js"></script>
+    <!--<script src="assets/jquery-1.9.0.min.js"></script>-->
     <script src="assets/jquery.cookie.js"></script><!--cookie插件-->
     <script src="js/Index.js"></script><!--首页-->
     <script src="js/common.js"></script><!--右侧悬浮-->
     <script src="assets/moment.min.js"></script><!--日期-->
     <script src="assets/jquery.daterangepicker.js"></script><!--日期-->
-    <!--<script type="text/javascript" src="path/to/validator/jquery.validator.js"></script><!--验证-->-->
-	<!--<script type="text/javascript" src="path/to/validator/local/zh_CN.js"></script><!--配置验证-->-->
+    <!--<script type="text/javascript" src="path/to/validator/jquery.validator.js"></script><!--验证-->
+	<!--<script type="text/javascript" src="path/to/validator/local/zh_CN.js"></script><!--配置验证-->
     <script src="js/login.js"></script><!--登录-->
     <script src="js/Commonality.js"></script><!--控件-->
     <script>
@@ -162,7 +162,6 @@
             </div>
            </div>
 		</div> 
-         
         <!-- 居家游app下载 -->
         <div class="Downapp" style="display:none;"><a href="javascript:void(0);" target="_blank"><img src="images/index/huodong.png" alt="居家游APP下载"></a></div>
         <div class="Content">
@@ -501,7 +500,7 @@
 <!--登录-->
 <div class="content-bg">
     <div class="content">
-      <form class="login-form" method="post" action="#">
+      <!--<form class="login-form"  method="post" action="#">-->
         <!-- 登录类型 -->
         <ul id="myTab" class="nav nav-tabs">
             <li class="active">
@@ -511,7 +510,7 @@
         </ul>
         <div id="myTabContent" class="tab-content">
             <!-- 快捷登录 -->
-            <div class="tab-pane fade in active" id="shortcut">
+            <form class="tab-pane fade in active" id="shortcut">
                 <div class="form-group tel">
                     <label for="firstname" class="col-sm-2 control-label">手机号</label>
                     <div class="col-sm-10">
@@ -551,9 +550,9 @@
                         <a class="Third-login qq-dl" href="javascript:void(0);"></a>
                     </div>
                 </div>
-            </div>
+            </form>
             <!--普通登录-->
-            <div class="tab-pane fade" id="common">
+            <form class="tab-pane fade" id="common">
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">手机号</label>
                     <div class="col-sm-10">
@@ -587,9 +586,8 @@
                         <a class="Third-login qq-dl" href="javascript:void(0);"></a>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
-      </form>
     </div>
 </div>
 <!--注册-->
@@ -598,12 +596,8 @@
         <div class="reg-top">
             <h2 class="reg-title">新用户注册</h2>
         </div>
-        <form class="login-form" method="post">
-<<<<<<< HEAD
+        <form class="reg-form" method="post">
             <!--注册1-->
-=======
-            <!-- 注册1 -->
->>>>>>> f2ff70d47b3e85b79935566fe59f45e2325add9c
             <div class="" id="reg-shortcut">
                 <div class="form-group tel">
                     <label for="firstname" class="col-sm-2 control-label">手机号</label>
@@ -645,22 +639,74 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default reg-btn">注册</button>
+                        <button type="button" class="btn btn-default reg-btn">注册</button>
                         <span class="reg-account">已有账号，&nbsp;<a class="dl" href="javascript:void(0);" >登录</a></span>
                     </div>
                 </div>
           </div>
+          <!--资料完善-->
+          <div class="content-per">
+		    <div class="reg-center">
+		        <div class="reg-top">
+		            <h2 class="reg-title">注册信息资料完善</h2>
+		        </div>
+	            <div class="" id="per-shortcut">
+	            	<div class="my-pic">
+					   <p class="fk-img imghead">
+					   	   <img class="reg-img" src="images/user/fk_touxiang_icon.png">
+					   	   <input class="reg-upload" type="file" multiple />
+					   </p>
+					   <p>添加头像</p>
+					</div>
+	                <div class="form-group tel">
+	                    <label for="firstname" class="col-sm-2 control-label">性别</label>
+	                    <div class="col-sm-10">
+	                        <div class="radio" name="sex" value="先生"><ins class="checked sir"></ins><span class="">先生</span></div>
+	                        <div class="radio" name="sex" value="女士"><ins class="madam"></ins><span class="">女士</span></div>
+	                    </div>
+	                    <span class="prompt prompt-phone"></span>
+	                </div>
+	               
+	                <div class="form-group">
+	                    <label for="lastname" class="col-sm-2 control-label">昵称</label>
+	                    <div class="col-sm-10">
+	                        <input type="text" class="txt" id="pic-nickname"  placeholder="请设置您的昵称">      
+	                    </div>
+	                    <p class="prompt-nickname"></p>
+	                </div>
+	                <div class="form-group">
+	                    <label for="lastname" class="col-sm-2 control-label">姓名</label>
+	                    <div class="col-sm-10">
+	                        <input type="text" class="txt" id="pic-name"  placeholder="请输入您的真实姓名">
+	                    </div>
+	                    <p class="prompt-name"></p>
+	                </div>
+	                <div class="form-group">
+	                    <label for="lastname" class="col-sm-2 control-label">身份<br/>证号</label>
+	                    <div class="col-sm-10">
+	                        <input type="text" class="txt" id="set-identity"  placeholder="请输入您的身份证号码">
+	                    </div>
+	                    <p class="prompt-identity"></p>
+	                </div>
+	                <div class="form-group" style="padding-top: 30px;">
+	                    <div class="col-sm-offset-2 col-sm-10">
+	                        <button type="submit" class="btn btn-default per-btn">注册完成</button>
+	                        <span class="skip"><a class="tg" href="javascript:void(0);" >跳过</a></span>
+	                    </div>
+	                </div>
+	          </div> 
+		   </div>
+		</div>
       </form>      
    </div>
 </div>
 <!--用户注册信息完善-->
-<div class="content-per">
+<!--<div class="content-per">
     <div class="reg-center">
         <div class="reg-top">
             <h2 class="reg-title">注册信息资料完善</h2>
         </div>
         <form class="login-form" method="post">
-            <!-- 完善内容 -->
             <div class="" id="per-shortcut">
             	<div class="my-pic">
 				   <p class="fk-img imghead">
@@ -708,7 +754,7 @@
           </div>
       </form>      
    </div>
-</div>
+</div>-->
 
 <!--重设密码-->
 <div class="content-set">
@@ -716,13 +762,12 @@
         <div class="content-top">
             <h2 class="set-title">重设密码</h2>
         </div>
-      <form class="login-form" method="post">
-            <!-- 快捷登录 -->
+      <form class="login-form" id="reset-form" method="post">
             <div class="tab-pane fade in active">
                 <div class="form-group tel">
                     <label for="firstname" class="col-sm-2 control-label">手机号</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" <!--id="cell-phone"-->  placeholder="请输入您的手机号">
+                        <input type="text" class="txt" id="reset-phone"  placeholder="请输入您的手机号">
                         <span class="note-pwd"><a id="get-note" href="javascript:void(0);">获取短信验证码</a></span>
                     </div>
                     <span class="prompt prompt-phone"></span>
@@ -730,28 +775,28 @@
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">图片<br/>验证码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="pic-code"  placeholder="请输入图片验证码">
-                        <span class="verification"><a href="javascript:void(0);">图片验证码</a></span>
+                        <input type="text" class="txt" id="reset-picture"  placeholder="请输入图片验证码">
+                        <span class="verification" id="reset-verify"><a href="javascript:void(0);">图片验证码</a></span>
                     </div>
-                    <span class="prompt prompt-piccode"></span>
+                    <span class="prompt reset-piccode"></span>
                 </div>
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">手机<br/>验证码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="mobile-code"  placeholder="请输入您手机收到的验证码">
+                        <input type="text" class="txt" id="reset-phone-verify"  placeholder="请输入您手机收到的验证码">
                     </div>
-                    <span class="prompt prompt-mobile"></span>
+                    <span class="prompt reset-mobile"></span>
                 </div>
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">重设<br/>新密码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="set-pwd"  placeholder="请输入您设置的新密码">
+                        <input type="password" class="txt" id="reset-pwd"  placeholder="请输入您设置的新密码">
                     </div>
-                    <span class="prompt prompt-pwd"></span>
+                    <span class="prompt reset-pwd"></span>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default" id="reset-btn">完成</button>
+                        <button type="submit" class="btn btn-default">完成</button>
                     </div>
                 </div>
            </div>
@@ -764,45 +809,3 @@
 <script type="text/javascript" src="js/citySelector.js"></script>
 </body>
 </html>
-<script type="text/javascript">  
-//	$(document).ready(function () {
-//	    if ($.cookie("rmbUser") == "true") {
-//		console.log($("#ck_rmbUser"))
-//	    $("#ck_rmbUser").addClass("checked");
-//	    $("#tel-phone").val($.cookie("username"));
-//	    $("#set-pwd").val($.cookie("password"));
-//	    }
-//	    
-//	    
-//	    
-//	    
-//	});
-//	 
-//	//登录记住用户名密码
-//	function Save() {
-//	    if ($("#ck_rmbUser").is(".checked")) {
-//	  var str_username = $("#tel-phone").val();
-//	  var str_password = $("#set-pwd").val();
-//	  $.cookie("rmbUser", "true", { expires: 7 }); //存储一个带7天期限的cookie
-//	  $.cookie("username", str_username, { expires: 7 });
-//	  $.cookie("password", str_password, { expires: 7 });
-//	}else {
-//	  $.cookie("rmbUser", "false", { expire: -1 });
-//	  $.cookie("username", "", { expires: -1 });
-//	  $.cookie("password", "", { expires: -1 });
-//	    }
-//	  };
-//	  
-	//快捷登录记住用户手机号
-//	function SavesHortcut() {
-//		
-//	  if ($("#ck_shortcut").is(".checked")) {
-//	  var str_username = $("#Hortcut-phone").val();
-//	  $.cookie("rmbUser", "true", { expires: 7 }); //存储一个带7天期限的cookie
-//	  $.cookie("username", str_username, { expires: 7 });
-//	}else {
-//	  $.cookie("rmbUser", "false", { expire: -1 });
-//	  $.cookie("username", "", { expires: -1 });
-//	    }
-//	};
-</script>  
