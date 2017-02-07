@@ -121,6 +121,11 @@ a:hover {
 	display: inline-block;
 	padding-left: 20px;
 }
+.prompt-nickname,.prompt-name,.prompt-identity{
+	display: inline-block;
+	line-height:40px; 
+	
+}
 .col-sm-2 {
 	width:72px;
 	float: left;
