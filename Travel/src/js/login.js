@@ -71,7 +71,6 @@ $(function () {
 		$(".fk-pulldown").hide();
 	});
 	//登录、未登录
-<<<<<<< HEAD
 	$(".btn").on("click",function(e){
 		e.preventDefault();
 		$(".content-bg").css("display","none");
@@ -80,16 +79,7 @@ $(function () {
 		$(".nolink").css("display","block");
 		$(".fd-pulldown").css("display","none");
 	});
-=======
-//	$(".btn").on("click",function(e){
-//		e.preventDefault();
-//		$(".content-bg").css("display","none");
-//		$(".mask-layer").css("display","none");
-//		$(".fk").css("display","block");
-//		$(".nolink").css("display","block");
-//		$(".fd-pulldown").css("display","none");
-//	});
->>>>>>> f2ff70d47b3e85b79935566fe59f45e2325add9c
+
 	//退出登录
 	$(".log-out").on("click",function(){
 //		$(".fk").css("display","none");
@@ -98,8 +88,7 @@ $(function () {
 	
 	//我是房东
 	var fasg = true;
-	$(".login a").on("mouseenter",function(){
-		
+	$(".login a").on("mouseenter",function(){	
 		//未开通
 		if (!fasg) {
 			$(".fd-pulldown").show();

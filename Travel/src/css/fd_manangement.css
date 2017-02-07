@@ -413,11 +413,97 @@ caption {
 	display: block;
 	width: 100%;
 	background: #fff;
+	padding-left: 20px;
+	overflow: hidden; 
+}
+.hotal-list {
+	width: 100%;
+	padding-top: 20px;
+	padding-right: 25px;
+	border-bottom: 2px solid #ccc;
+}
+.hotal-state {
+	color: #ff6a51;
+	padding-left: 30px;
+}
+.audit-data {
+	float: right;
+}
+/*房源信息*/
+.hotal-cont {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	
+}
+.hotal-left {
+	float: left;
+}
+/*房源图*/
+.hotal-img {
+	float: left;
+	width: 200px;
+	height: 120px;
+}
+.hotal-img img {
+	width: 100%;
+	height: 100%;
+}
+/*房源介绍*/
+.hotal-txt {
+	float: left;
+	padding-left: 10px;
+}
+.hotal-txt p {
+	line-height: 20px;
+}
+.hotal-txt p img {
+	padding-right: 10px;
+}
+.change-txt {
+	background: none;
+	border: none;
+	color: #323232;
+}
+.change-name {
+	color: #ff6a51;
+}
+/*房源按钮*/
+.hotal-right {
+	float: right;
+	padding-right: 100px;
+}
+.hotal-right a {
+	display: block;
+	width: 100px;
+	height: 30px;
+	color: #fff;
+	line-height: 30px;
+	text-align: center;
+	background: #1bc272;
+	border-radius: 10px;
+	margin-top: 10px;
+	
+}
+
+/***********我的房源-价格房态***********/
+.price-box{
+	display: block;
+	width: 100%;
+	background: #fff;
 	padding: 20px 20px;
 	overflow: hidden; 
 }
-
-
+.price-box .table>thead>tr>th, .table>tbody>tr>td {
+    padding: 6px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+}
+.price-box .table>thead>tr>th span, .price-box .table>tbody>tr>td span {
+	display: block;
+}
+.price-num {
+	cursor: pointer;
+}
 
 
 /***********接单操作弹框***********/
@@ -638,4 +724,47 @@ caption {
 }
 .td_Price samp {
 	color: #ff1a00;
+}
+
+/***********修改单日或阶段日价***********/
+.change-time {
+	
+}
+.change-time dl {
+	width: 100%;	
+	height: 60px;
+}
+.change-time dl dt {
+	float: left;
+	width: 75px;
+	text-align: right;
+	margin-right: 10px;
+}
+.change-time dl dd {
+	float: left;
+}
+/*已选时间*/
+.one-dl {
+	line-height: 56px;
+	margin-bottom: 20px;
+}
+.sel-time input {
+	width: 147px;
+	height: 56px;
+	background: #f2f2f2;
+	border: none;
+}
+.sel-time span {
+	padding: 0 30px;
+}
+/*房态*/
+.daily-prices {
+	width: 147px;
+	height: 34px;
+}
+/*剩余套数*/
+.remaining-units {
+	width: 78px;
+	height: 34px;
+	margin-right: 10px;
 }
