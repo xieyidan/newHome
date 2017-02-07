@@ -4,6 +4,7 @@
 $(function () {
 
 	//未登录、注册
+	var  loginResult;//保存登录结果
 	//登录
   	$(".dl").on("click",function(){
 		$(".content-bg").css("display","block"); //登录显示
@@ -31,6 +32,7 @@ $(function () {
 		$(".content-per").css("display","none");  //注册信息完善
 		$(".mask-layer").css("display","block");
 		$(".content-bg").css("display","block"); 
+		$(".content-reg").css("display","none");
 		$("body").css("overflow","hidden");
 	});
 	
@@ -70,6 +72,7 @@ $(function () {
 	}).on("mouseleave",function(){
 		$(".fk-pulldown").hide();
 	});
+<<<<<<< HEAD
 	//登录、未登录
 	$(".btn").on("click",function(e){
 		e.preventDefault();
@@ -79,6 +82,8 @@ $(function () {
 		$(".nolink").css("display","block");
 		$(".fd-pulldown").css("display","none");
 	});
+=======
+>>>>>>> 95716437ae08154c147b9c6664cb4e1930638ac9
 
 	//退出登录
 	$(".log-out").on("click",function(){
@@ -116,12 +121,12 @@ $(function () {
 		});
 	});
 	//发布房源
-	  $(".release").on("click",function(){
-		  $(".content-bg").css("display","block");
-		  $(".mask-layer").css("display","block");
-		  $(".content-reg").css("display","none");
-		  $("body").css("overflow","hidden");
-	  });
+//	  $(".release").on("click",function(){
+//		  $(".content-bg").css("display","block");
+//		  $(".mask-layer").css("display","block");
+//		  $(".content-reg").css("display","none");
+//		  $("body").css("overflow","hidden");
+//	  });
 
 /******注册验证********/
 	var isvalue; //存放验证结果的变量
@@ -145,40 +150,10 @@ $(function () {
 	 }).focus(function(e){
 		 $(".prompt-phone").text("");
 		});
-	//获取短信验证码函数
-	function phoneVerify(){
-		$("#register").on("click",function(){
-			console.log(1111)
-			resetCode();
-			//倒计时方法
-			function resetCode(){
-				var obj = $("#register");
-				var timer = null ;
-				var second = 3; 
-				timer = setInterval(function(){
-					if(second >0 ){
-						obj.html(second+'s后重新获取');
-						second -= 1;
-						obj.unbind("click"); //阻止点击事件
-						 return false;
-					}else {
-						clearInterval(timer);
-						obj.html('重新获取');
-						$("#register").on("click",function(){
-							resetCode();
-						});
-					}
-				},1000);
-			}	
-		});
-	};
-
 	//图片验证码
 	$("#pic-code").blur(function(e){
-		var tel=$(this).val();  //获取输入的手机号
-		var registerCode =  $(".register-code").text();
-		console.log(registerCode)
-		if (registerCode == tel) {
+		var tel=$(this).val();  //获取输入框值
+		if ($("#reset-verify").text() == tel) {
 			$(".prompt-piccode").text("验证码输入正确");
 			$(".prompt-piccode").css("color","#09F");
 			isvalue=true;
@@ -207,7 +182,7 @@ $(function () {
 			isvalue=false;
 		};
 	});
-	//设置新密码
+	//设置密码
 	$("#register-pwd").blur(function(e) {
 		var tel=$(this).val();  //获取输入的手机号
 		var re=new RegExp();  //创建正则表达式的对象
@@ -240,19 +215,26 @@ $(function () {
 	//注册按钮
 	$(".reg-btn").on("click",function(){
 		if (isvalue==true) {
-			console.log("OK");
-			$(".content-reg").css("display","none"); 		
 			$(".mask-layer").css("display","block");
 			$(".content-per").css("display","block"); //注册信息完善
 			$("body").css("overflow","hidden");	
 		}else{
-			alert("填写未完成")
+			$(".prompt-phone").text("请输入手机号");
+			$(".prompt-phone").css("color","#F03");
+			$(".prompt-piccode").text("请输入图片验证码!	");
+			$(".prompt-piccode").css("color","#F03");
+			$(".prompt-mobile-reg").text("请输入手机验证码");
+			$(".prompt-mobile-reg").css("color","#F03");
+			$(".register-pwd").text("请输入密码");
+			$(".register-pwd").css("color","#F03");
+			$(".prompt-inv").text("请输入邀请码");
+			$(".prompt-inv").css("color","#F03");
 		};
 	});
 	
 //信息资料完善
-	//保存验证结果
-	var perfect;
+	var perfect;//保存验证结果
+	var regImg = $(".reg-img")
 	//添加头像
 	var regImg = $('.reg-img');
 	var regUpload = $('.reg-upload');
@@ -260,17 +242,17 @@ $(function () {
 		var strsrc=getObjectURL(this.files[0]);
     	regImg.attr("src",strsrc);
 	});
-	function getObjectURL(file) {
-	    var url = null ; 
-	    if (window.createObjectURL!=undefined) { // basic
-	        url = window.createObjectURL(file) ;
-	    } else if (window.URL!=undefined) { // mozilla(firefox)
-	        url = window.URL.createObjectURL(file) ;
-	    } else if (window.webkitURL!=undefined) { // webkit or chrome
-	        url = window.webkitURL.createObjectURL(file) ;
-	    }
-	    return url ;
-	};
+	//验证头像是否上传
+	headImg(regImg);
+	function headImg(URL){
+		if (URL) {
+			perfect = false;
+			regUpload.on("change",function(){
+				perfect = true;
+			});
+		};
+	}
+	
 	//性别先生
 	$(".sir").on("click",function(){
 		if ($(this).is(".checked")) {
@@ -316,7 +298,7 @@ $(function () {
 		};
 	});
 	//身份证号验证
-	$("#set-identity").blur(function(e) {
+	$("#set-identity").blur(function() {
 		var tel=$(this).val();  
 		var re=new RegExp();  
 		re=/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;
@@ -334,20 +316,27 @@ $(function () {
 		 $(".prompt-identity").text("");
 		});
 	//注册完成按钮
-	$(".per-btn").on("click",function(){
+	$(".reg-form").on("submit",function(e){
+		e.preventDefault();
 		if (perfect==true) {
 			$(".content-per").css("display","none");  //注册信息完善
 			$(".mask-layer").css("display","block");
 			$(".content-bg").css("display","block"); 
+			$(".content-reg").css("display","none");
 			$("body").css("overflow","hidden");
 		}else{
-			console.log("未完成")
+			$(".prompt-nickname").text("*请输入昵称");
+			$(".prompt-nickname").css("color","#F03");
+			$(".prompt-name").text("*请输入姓名!");
+			$(".prompt-name").css("color","#F03");
+			$(".prompt-identity").text("*请输入身份证号");
+			$(".prompt-identity").css("color","#F03");
 		};
 	});
 	
 	
 /******登录验证********/	
-	//快捷登录
+	/*快捷登录*/
 	var shortcutUp;//保存快捷登录验证结果
 	var HortcutCode = $("#Hortcut-code");
 	//手机验证码
@@ -361,7 +350,7 @@ $(function () {
 			phoneVerify(HortcutCode);
 			shortcutUp=true;
 		}else{
-			$(".prompt-shortcut").text("您输入的手机号有误，请重新输入!	");
+			$(".prompt-shortcut").text("您输入的手机号有误，请重新输入!");
 			$(".prompt-shortcut").css("color","#F03");
 			shortcutUp=false;
 			
@@ -403,22 +392,6 @@ $(function () {
 			shortcutUp=true;
 		};
 	});
-	//快捷登录
-	$("#login-btn").on("click",function(e){
-		console.log("登录")
-		e.preventDefault();
-		if (shortcutUp==true) {
-			$(".content-bg").css("display","none");
-			$(".mask-layer").css("display","none");
-			$(".fk").css("display","block");
-			$(".nolink").css("display","none");
-			$(".fd-pulldown").css("display","none");
-		}else{
-			alert("请填写完成")
-		};
-			
-	});
-	
 	//显示快捷登录手机号码
 	hortcut();
 	function hortcut(){
@@ -427,8 +400,34 @@ $(function () {
 		    $("#Hortcut-phone").val($.cookie("username"));
 		};
 	};
+	//快捷登录
+	$("#shortcut").on("submit",function(e){
+		e.preventDefault();
+		var ckShortcut = $("#ck_shortcut");
+		var HortcutPhone = $("#Hortcut-phone").val();
+		if (shortcutUp==true) {
+			loginResult = true;
+			SavesHortcut(ckShortcut,HortcutPhone);//自动登录
+			$(".content-bg").css("display","none");
+			$(".mask-layer").css("display","none");
+			$(".fk").css("display","block");
+			$(".nolink").hide();
+			$(".nolink").css("display","none");
+			$(".fd-pulldown").css("display","none");
+		}else{
+			loginResult = false;
+			$(".prompt-shortcut").text("请输入手机号");
+			$(".prompt-shortcut").css("color","#F03");
+			$(".prompt-shortcut-up").text("请输入图片验证码!	");
+			$(".prompt-shortcut-up").css("color","#F03");
+			$(".prompt-phone-verify").text("请输入验证码");
+			$(".prompt-phone-verify").css("color","#F03");
+		};
+			
+	});
 	
-//普通登录
+	
+/*普通登录*/
 	var common;//存放验证结果
 	//手机号
 	$("#tel-phone").blur(function(e) {
@@ -446,8 +445,8 @@ $(function () {
 			
 		};
 	 }).focus(function(e){
-		 $(".prompt-phone").text("");
-		});
+	    $(".prompt-phone").text("");
+	});
 	//密码
 	$("#set-pwd").blur(function(e) {
 		var tel=$(this).val();  //获取输入的手机号
@@ -461,49 +460,139 @@ $(function () {
 			$(".prompt-pwd-common").text("密码错误");
 			$(".prompt-pwd-common").css("color","#F03");
 			common=false;
-			
 		};
 	 }).focus(function(e){
 		 $(".prompt-phone").text("");
 		});
-
+	//显示用户普通登录账户密码
+	commonSave();
+	function commonSave(){
+		if ($.cookie("rmbUser") == "true") {
+		    $("#ck_rmbUser").addClass("checked");
+		    $("#tel-phone").val($.cookie("username"));
+		    $("#set-pwd").val($.cookie("password"));
+	  };
+	};
 	//普通登录按钮
-	$("#user-login").on("click",function(e){
-		console.log("登录")
+	$("#common").on("submit",function(e){
 		e.preventDefault();
 		if (common==true) {
+			loginResult = true;
 			$(".content-bg").css("display","none");
 			$(".mask-layer").css("display","none");
 			$(".fk").css("display","block");
 			$(".nolink").css("display","none");
 			$(".fd-pulldown").css("display","none");
 		}else{
+			loginResult = false;
 			$(".prompt-tel").text("请输入手机号");
 			$(".prompt-tel").css("color","#F03");
 			$(".prompt-pwd-common").text("请输入密码");
 			$(".prompt-pwd-common").css("color","#F03");
 		};
-			
 	});
-
-
-
-
-	//显示用户普通登录账户密码
-	commonSave();
-	function commonSave(){
-		if ($.cookie("rmbUser") == "true") {
-			console.log($("#ck_rmbUser"))
-		    $("#ck_rmbUser").addClass("checked");
-		    $("#tel-phone").val($.cookie("username"));
-		    $("#set-pwd").val($.cookie("password"));
-	   };
-//		$("#user-login").on("click",function(){
-//			Save()
-//		})
-	};
+/*重设密码*/
+	//手机号
+	var Reset; //存放验证结果的变量
+	var notePwd = $("#note-pwd");
+	//手机号验证
+	$("#reset-phone").blur(function(e) {
+		var tel=$(this).val();  //获取输入的手机号
+		var re=new RegExp();  //创建正则表达式的对象
+		re=/^1(3|4|5|7|8)\d{9}$/;
+		if(re.test(tel)){
+			$(".prompt-phone").text("输入正确");
+			$(".prompt-phone").css("color","#09F");
+			phoneVerify(notePwd);
+			Reset=true;
+		}else{
+			$(".prompt-phone").text("您输入的手机号有误，请重新输入!	");
+			$(".prompt-phone").css("color","#F03");
+			Reset=false;
+			
+		}
+	 }).focus(function(e){
+		 $(".prompt-phone").text("");
+		});
+	//图片验证码
+	$("#reset-picture").blur(function(e){
+		var tel=$(this).val();  //获取输入的手机号
+		if ($("#reset-verify").text() == tel) {
+			$(".reset-piccode").text("验证码输入正确");
+			$(".reset-piccode").css("color","#09F");
+			Reset=true;
+		}
+		else if(tel =="" ||tel == null){
+			$(".reset-piccode").text("请输入图片验证码!	");
+			$(".reset-piccode").css("color","#F03");
+			Reset=false;
+		}
+		else{
+			$(".reset-piccode").text("验证码输入错误，请重新输入!	");
+			$(".reset-piccode").css("color","#F03");
+			Reset=false;
+		};
+	})
+	//手机验证码
+	$("#reset-phone-verify").blur(function(e){
+		var tel=$(this).val();  //获取输入的手机号
+		if (tel =="" ||tel == null) {
+			$(".reset-mobile").text("请输手机入验证码");
+			$(".reset-mobile").css("color","#F03");
+			Reset=true;
+		}else{
+			$(".reset-mobile").text("验证码输入正确!");
+			$(".reset-mobile").css("color","#09F");
+			Reset=false;
+		};
+	});
+	//设置新密码
+	$("#reset-pwd").blur(function(e) {
+		var tel=$(this).val();  //获取输入的手机号
+		var re=new RegExp();  //创建正则表达式的对象
+		re=/^[a-zA-Z]\w{5,17}$/;
+		if(re.test(tel)){
+			$(".reset-pwd").text("输入正确");
+			$(".reset-pwd").css("color","#09F");
+			Reset=true;
+		}else{
+			$(".reset-pwd").text("密码格式为8-16的字母和数字!	");
+			$(".reset-pwd").css("color","#F03");
+			Reset=false;
+		};
+	 });
+	//设置新密码完成按钮
+	$("#reset-form").on("submit",function(e){
+		e.preventDefault();
+		if (Reset==true) {
+			console.log(222222)
+			loginResult = true;
+			$(".content-bg").css("display","none");
+			$(".mask-layer").css("display","none");
+			$(".fk").css("display","block");
+			$(".nolink").css("display","none");
+			$(".fd-pulldown").css("display","none");
+			$(".set-center").css("display","none");
+		}else{
+			loginResult = false;
+			$(".prompt-phone").text("您输入的手机号有误，请重新输入!	");
+			$(".prompt-phone").css("color","#F03");
+			$(".reset-piccode").text("请输入图片验证码!	");
+			$(".reset-piccode").css("color","#F03");
+			$(".reset-mobile").text("请输手机入验证码");
+			$(".reset-mobile").css("color","#F03");
+			$(".reset-pwd").text("请输入新密码");
+			$(".reset-pwd").css("color","#F03");
+		};
+	});
 	
-	//获取短信验证码函数
+/*免费发布房源*/
+	
+	$(".house").on("click",function(){
+		
+	})
+	
+	//获取短信验证码函数封装
 	function phoneVerify(ags){
 		ags.on("click",function(){
 			resetCode();
@@ -530,31 +619,29 @@ $(function () {
 		});
 	};
 	
-	//登录记住用户名密码
-	function Save() {
-	    if ($("#ck_rmbUser").is(".checked")) {
-	  var str_username = $("#tel-phone").val();
-	  var str_password = $("#set-pwd").val();
-	  $.cookie("rmbUser", "true", { expires: 7 }); //存储一个带7天期限的cookie
-	  $.cookie("username", str_username, { expires: 7 });
-	  $.cookie("password", str_password, { expires: 7 });
-	}else {
-		  $.cookie("rmbUser", "false", { expire: -1 });
-		  $.cookie("username", "", { expires: -1 });
-		  $.cookie("password", "", { expires: -1 });
-		  };
-	  };
-	  
-	//快捷登录记住用户手机号
-	function SavesHortcut(remember,telPhone) {
-		
+	//勾选自动登录函数
+	function SavesHortcut(remember,usname,uspassword) {
 		if (remember.is(".checked")) {
-		  var str_username = telPhone.val();
 		  $.cookie("rmbUser", "true", { expires: 7 }); //存储一个带7天期限的cookie
-		  $.cookie("username", str_username, { expires: 7 });
+		  $.cookie("username", usname, { expires: 7 });
+		   $.cookie("password", uspassword, { expires: 7 });
 		}else {
 		  $.cookie("rmbUser", "false", { expire: -1 });
 		  $.cookie("username", "", { expires: -1 });
+		  $.cookie("password", "", { expires: -1 });
 		};
+		return;
+	};
+	//base64
+	function getObjectURL(file) {
+	    var url = null ; 
+	    if (window.createObjectURL!=undefined) { // basic
+	        url = window.createObjectURL(file) ;
+	    } else if (window.URL!=undefined) { // mozilla(firefox)
+	        url = window.URL.createObjectURL(file) ;
+	    } else if (window.webkitURL!=undefined) { // webkit or chrome
+	        url = window.webkitURL.createObjectURL(file) ;
+	    }
+	    return url ;
 	};
 });

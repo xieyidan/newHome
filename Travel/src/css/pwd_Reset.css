@@ -65,6 +65,9 @@ a:hover {
 	border-radius: 5px;
 	margin: 0 auto;
 }
+.login-form{
+	margin-left: 100px;
+}
 /*重设密码*/	
 #shortcut {
 	width: 620px;
