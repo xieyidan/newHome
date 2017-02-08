@@ -72,7 +72,6 @@ $(function () {
 	}).on("mouseleave",function(){
 		$(".fk-pulldown").hide();
 	});
-<<<<<<< HEAD
 	//登录、未登录
 	$(".btn").on("click",function(e){
 		e.preventDefault();
@@ -82,9 +81,6 @@ $(function () {
 		$(".nolink").css("display","block");
 		$(".fd-pulldown").css("display","none");
 	});
-=======
->>>>>>> 95716437ae08154c147b9c6664cb4e1930638ac9
-
 	//退出登录
 	$(".log-out").on("click",function(){
 //		$(".fk").css("display","none");

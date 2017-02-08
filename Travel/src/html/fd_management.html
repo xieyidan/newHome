@@ -144,7 +144,7 @@
     		<div class="left-cont">
     			<ul class="left-nav">
     				<li>
-    					<div class="nav-title" href="javascript:;"><img src="../images/user/gongzuotai_icon.png" alt="我的交易图标"><span>我的交易</span></div>
+    					<div class="nav-title" href="javascript:;"><img src="../images/user/jiaoyi_icon.png" alt="我的交易图标"><span>我的交易</span></div>
     					<div class="nav-cont">
     						<a class="current actives" href="javascript:;">我的订单</a>
     						<a class="current" href="javascript:;">结算管理</a>
@@ -161,7 +161,7 @@
     					<div class="nav-title" href="javascript:;"><img src="../images/user/xiaoxi_icon.png" alt="我的消息图标"><span>我的消息</span></div>
     					<div class="nav-cont">
     						<a class="current" href="javascript:;">消息记录</a>
-    						<a class="current" href="javascript:;" style="padding-right: 27px;">通知</a>
+    						<a class="current" href="javascript:;">系统消息</a>
     					</div>
     				</li>
     				<li>
@@ -579,6 +579,13 @@
     								<a>上线</a>
     							</div>
     						</div>
+    						<ul class="house-tag clear">
+							    	<li><img src="../images/house/shipai_icon.png"><span class="txt-color">实拍</span></li>
+							    	<li><img src="../images/house/yanzhen_icon.png"><span class="txt-color">验真</span></li>
+							    	<li><img src="../images/house/ziying_icon.png"><span class="txt-color">自营</span></li>
+							    	<li><img src="../images/house/jingxuan_icon.png"><span class="txt-color">精选</span></li>
+							    	<li><img src="../images/house/haoping_icon.png"><span class="txt-color">好评</span></li>
+							</ul>
     					</div>
     					<!--房源列表-->
     					<div class="hotal-list">
@@ -659,7 +666,7 @@
 									<td>日价</td>
 									<td>日价</td>
 									<td>编辑更多</td>
-									<td>修改价格</td>
+									<td class="change-price" data-toggle="modal" data-target="#myModal-10">修改价格</td>
 								</tr>
 								<tr>
 									<td>房源名称</td>
@@ -671,7 +678,7 @@
 									<td>日价</td>
 									<td>日价</td>
 									<td>编辑更多</td>
-									<td>修改价格</td>
+									<td class="change-price">修改价格</td>
 								</tr>
 								<tr>
 									<td>房源名称</td>
@@ -683,11 +690,90 @@
 									<td>日价</td>
 									<td>日价</td>
 									<td>编辑更多</td>
-									<td>修改价格</td>
+									<td class="change-price">修改价格</td>
 								</tr>
 							</tbody>
 						</table>
 					   
+    				</div>
+    			</div>
+    			<!--右侧内容_聊天记录-->
+    			<div class="right-cont item">
+    				<p class="r-color right-top"><span>我是房东 ></span><span class="my-order">我的消息 ></span><span class="title-name">聊天记录</span></p>
+    				<div class="chat-cont">
+    					<!--消息检索-->
+    					<div class="infor-search">
+    						<span>消息检索</span>
+    						<input class="infor-time" type="text" />至
+    						<input class="infor-time" type="text" />
+    						<input class="fk-name" type="text" placeholder="请输入房客昵称" />
+    						<select class="weekend-special">
+									<option value="">选择全部房源</option>
+									<option value="">房源别名</option>
+    						</select>
+    					</div>
+    					<!--聊天消息-->
+    					<div>
+    						<div class="chat-infor clear">
+    							<!--房东头像,昵称-->
+	    						<div class="head-img">
+	    							<img  src="../images/user/pinglun_moren_icon.png">
+	    							<p>房东昵称</p>	    						
+	    						</div>
+	    						<!--聊天内容-->
+		    					<div class="chat-txt">
+		    						<p class="">环球中心新会展地铁口</p>
+		    						<p class="chat-Name">房东昵称说</p>
+		    						<p class="chat-content">聊天内天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊聊天内天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊聊天内天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊</p>
+		    						<p class="chat-all">
+		    							<span class="chat-page">共有<b class="chat-num">8</b>条信息</span>
+		    							<span class="chat-publish">发表于<b>2017-1-11</b><b>15:06:50</b></span>
+		    						</p>
+		    					</div>
+    						</div>
+    						<div class="chat-infor clear">
+    							<!--房东头像,昵称-->
+	    						<div class="head-img">
+	    							<img  src="../images/user/pinglun_moren_icon.png">
+	    							<p>房东昵称</p>	    						
+	    						</div>
+	    						<!--聊天内容-->
+		    					<div class="chat-txt">
+		    						<p class="">环球中心新会展地铁口</p>
+		    						<p class="chat-Name">房东昵称说</p>
+		    						<p class="chat-content">聊天内天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊聊天内天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊聊天内天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊</p>
+		    						<p class="chat-all">
+		    							<span class="chat-page">共有<b class="chat-num">8</b>条信息</span>
+		    							<span class="chat-publish">发表于<b>2017-1-11</b><b>15:06:50</b></span>
+		    						</p>
+		    					</div>
+    						</div>
+    						<div class="chat-infor clear">
+    							<!--房东头像,昵称-->
+	    						<div class="head-img">
+	    							<img  src="../images/user/pinglun_moren_icon.png">
+	    							<p>房东昵称</p>	    						
+	    						</div>
+	    						<!--聊天内容-->
+		    					<div class="chat-txt">
+		    						<p class="">环球中心新会展地铁口</p>
+		    						<p class="chat-Name">房东昵称说</p>
+		    						<p class="chat-content">聊天内天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊聊天内天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊聊天内天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊</p>
+		    						<p class="chat-all">
+		    							<span class="chat-page">共有<b class="chat-num">8</b>条信息</span>
+		    							<span class="chat-publish">发表于<b>2017-1-11</b><b>15:06:50</b></span>
+		    						</p>
+		    					</div>
+    						</div>
+    						<!--分页-->
+						    <ul class="pagination">		
+								<li class=""><a href="#">尾页</a></li>
+								<li class=""><a href="#">下一页</a></li>
+								<li><a href="#">...</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">1</a></li>
+							</ul>
+    					</div>
     				</div>
     			</div>
     		</div>
@@ -1040,7 +1126,7 @@
 				</div>
 				<div class="modal-body">
 					<!--时间-->
-					<div class="change-time">
+					<div class="unified-change">
 						<dl>
 							<dt>每日价格：</dt>
 							<dd>
@@ -1050,13 +1136,30 @@
 						<dl>
 							<dt>周末特殊价：</dt>
 							<dd>
-								<select class="special-price">
-									<option value="">1</option>
-								</select>套
+								<select class="weekend-special">
+									<option value="">周五/周六/周日</option>
+									<option value="">周五/周六</option>
+									<option value="">周六/周日</option>
+								</select>
+								<input class="days" type="text" /> &nbsp;元/天
 							</dd>
 						</dl>
 						<dl>
-							<dt>特殊价是否参加打折：</dt>
+							<dt>房源打折设置：</dt>
+							<dd>
+								<textarea class="set-discount" readonly=""></textarea>
+							</dd>
+						</dl>
+						<dl>
+							<dt>用户住满：</dt>
+							<dd>
+								<input class="days" type="text" /> &nbsp;天 打&nbsp;&nbsp;
+								<input class="days" type="text" /> &nbsp;折/天
+								<a class="add-txt">添加</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt style="width: 140px;">特殊价是否参加打折：</dt>
 							<dd>
 								<div class="radio" name="reason" value="" style="margin-right: 30px;"><ins class=""></ins><span>是</span></div>
 								<div class="radio" name="reason" value=""><ins class=""></ins><span>否</span></div>
@@ -1065,7 +1168,7 @@
 						
 					</div>
 				</div>
-				<div class="modal-footer reason-btn">
+				<div class="modal-footer confirm-btn">
 					<button type="button" class="ok-btn" data-dismiss="modal" aria-hidden="true">确定</button>
 					<button type="button" class="no-btn" >取消</button>
 				</div>												
