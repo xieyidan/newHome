@@ -49,15 +49,21 @@
                 <dd>
                 	<select id="region_id1" class="distance largeSelect" name="region_id1">
 						<option value="请选择所在城市">请选择所在城市</option>
+						<option value="请选择所在城市">贵阳</option>
+						<option value="请选择所在城市">北京</option>
+						<option value="请选择所在城市">上海</option>
 					</select>
                     <select id="region_id2" class="distance largeSelect" name="region_id2">
 						<option value="请选择所在区域">请选择所在区域</option>
+						<option value="请选择所在区域">观山湖区</option>
 					</select>
                     <select id="region_id3" class="distance largeSelect" name="region_id3">
 						<option value="请选择所在商区">请选择所在商区</option>
+						<option value="请选择所在商区">都匀路</option>
 					</select>
                     <select id="region_id4" class="distance largeSelect" name="region_id4">
 						<option value="请选择附近景点">请选择附近景点</option>
+						<option value="请选择附近景点">花园</option>
 					</select>
                 </dd>
                 <span class="sel-word sel-city"></span>
@@ -115,15 +121,15 @@
             <dl class="homesInfo">
             	<dt><span class="mandatory"><img src="../images/user/bitian_icon.png" alt="必填项图片"></span><span class="house">房屋面积</span></dt>
                 <dd>
-                	<input class="distance house-area" type="text" placeholder="请输入房屋面积"> 平米
+                	<input class="distance house-area" type="number" placeholder="请输入房屋面积"> 平米
                 </dd>
                 <span class="sel-word area"></span>
             </dl>
             <dl class="homesInfo">
             	<dt><span class="mandatory"><img src="../images/user/bitian_icon.png" alt="必填项图片"></span><span class="house">房屋户型</span></dt>
                 <dd>
-                	<select id="room" class="distance Door " name="">
-						<!--<option value="0">0</option>-->
+                	<select id="room" class="distance Door home-type" name="">
+						<option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -135,7 +141,7 @@
                         <option value="9">9</option>
                         <option value="10">9+</option>
 					</select>室
-                    <select id="" class="distance Door" name="">
+                    <select id="" class="distance Door home-type" name="">
 						<option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -148,7 +154,7 @@
                         <option value="9">9</option>
                         <option value="10">9+</option>
 					</select>厅
-                    <select id="" class="distance Door" name="">
+                    <select id="" class="distance Door home-type" name="">
 						<option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -161,7 +167,7 @@
                         <option value="9">9</option>
                         <option value="10">9+</option>
 					</select>厨
-                    <select id="" class="distance Door" name="">
+                    <select id="" class="distance Door home-type" name="">
 						<option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -214,7 +220,7 @@
             	<dt><span class="mandatory"><img src="../images/user/bitian_icon.png" alt="必填项图片"></span><span class="house">可住人数</span></dt>
                 <dd>
                 	<select id="people-num" class="distance people-num" name="">
-                       <!-- <option value="0">0</option>-->
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -256,9 +262,9 @@
                         <option value="10">9+</option>
 					</select> 
                     <span class="bed-word">张 , 宽</span>
-                    <input class="double-bed" id="Dwide" type="text">
+                    <input class="double-bed" id="Dwide" type="number">
                     <span class="bed-word">米 x 长</span>
-                    <input class="double-bed" id="Dlength" type="text">
+                    <input class="double-bed" id="Dlength" type="number">
                     <span class="bed-word">米</span>
                 </dd>
                 <dd class="bed-right">
@@ -282,9 +288,9 @@
                         <option value="10">9+</option>
 					</select>
                     <span class="bed-word">张 , 宽</span>
-                    <input class="double-bed" id="Swide" type="text">
+                    <input class="double-bed" id="Swide" type="number">
                     <span class="bed-word">米 x 长</span>
-                     <input class="double-bed" id="Slength" type="text">
+                     <input class="double-bed" id="Slength" type="number">
                     <span class="bed-word">米</span>
                 </dd>
                 <dd class="bed-right">
@@ -318,9 +324,9 @@
                         <option value="10">9+</option>
 					</select>
                     <span class="bed-word">张 , 宽</span>
-                    <input class="double-bed" id="Owide" type="text">
+                    <input class="double-bed" id="Owide" type="number">
                     <span class="bed-word">米 x 长</span>
-                    <input class="double-bed" id="Olength" type="text">
+                    <input class="double-bed" id="Olength" type="number">
                     <span class="bed-word">米</span>
                 </dd>
                 <dd class="other-right">
@@ -330,7 +336,7 @@
             </dl>
             <dl class="homesInfo">
            	  <dt><span class="mandatory"><img src="../images/user/bitian_icon.png" alt="必填项图片"></span><span class="house">能否加床</span></dt>
-                <dd>
+                <dd class="homesInfo-Can">
                     <div class="radio distance bed-checked" name="bedWhether" value="能"><ins></ins><span>能</span></div>
                     <div class="radio distance bed-checked" name="bedWhether" value="否"><ins></ins><span>否</span></div>
                 </dd>

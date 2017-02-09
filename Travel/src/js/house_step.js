@@ -5,49 +5,68 @@
 	jQuery(document).ready(function(){
 	
 	//步骤一
-	
+	var step1Val=[];//保存值
+	var step1Checking = [];//保存验证结果
 	//所在城市失去焦点事件
-	$(".largeSelect").blur(function(e) {
-       var selcity = $(".largeSelect option:selected").val(); 
-	   if(selcity=="请选择所在城市" || selcity=="请选择所在区域" || selcity=="请选择所在商区")
+	$(".largeSelect").change(function(e) {
+       var selcity = $(this).find("option:selected").text();
+	   aaa = selcity;
+       step1Val.push(selcity);
+       step1Val.length = 0;
+       step1Checking[0] = 0;
+   }).blur(function(e) {
+    	var selcity1 = $(this).val();
+    	
+    	if(selcity1=="请选择所在城市" || selcity1=="请选择所在区域" || selcity1=="请选择所在商区")
 		{
+			step1Checking[0] = 1;
 			$(".sel-city").text("请选择所在城市，所在区域！");
 		} 
-    }).focus(function(e) {
-        $(".sel-city").text("");
+    }).focus(function(e){
+    	$(".sel-city").text("");
     });
 	//具体地址
 	$(".house-address").blur(function(e) {
-       var address = $(".house-address").val();
-	   if(address=='')
+	   if($(".house-address").val()=='')
 		{
 			$(".specific-address").text("请输入具体地址！");
+			step1Checking[1] = 1;
+		}else{
+			$(".specific-address").text("");
+			step1Checking[1] = 0;
 		}
-    }).focus(function(e) {
-        $(".specific-address").text("");
-    });
+   });
 	//精确地址
 	$(".house-building").blur(function(e) {
-       var building = $(".house-building").val();  
+       var building = $(".house-building").val(); 
 	   if(building=='' || building==null)
 		{
 			$(".address-word").text("请填写房源精确地址！");
+			step1Checking[2] = 1;
+		}else{
+			step1Checking[2] = 0;
+			$(".address-word").text("");
 		}
-    }).focus(function(e) {
-        $(".address-word").text("");
-    });
+   });
+    //房屋类型
+	$(".house-type").change(function(e) {
+       var selcity = $(this).find("option:selected").text();
+	   
+   });
 	//房屋面积
 	$(".house-area").blur(function(e) {
-		var houseErea = $(".house-area").val();  
+		var houseErea = $(".house-area").val(); 
 		if(houseErea=='')
 		{
 			$(".area").text("请输入房屋面积！");
+			step1Checking[3] = 1;
+		}else{
+			$(".area").text("");
+			step1Checking[3] = 0;
 		}
-	}).focus(function(e) {
-        $(".area").text("");
-    });
-	//房屋户型
-	$("#room").blur(function(e) {  
+	});
+    //房屋户型
+	$("#room").blur(function(e) {
 		var houseRoom = $("#room option:selected").val();
 		if(houseRoom==0)
 		{
@@ -56,6 +75,21 @@
 	}).focus(function(e) {
         $(".door-model").text("");
     });
+//  $(".home-type").change(function(e) {
+//     var selcity = $(this).find("option:selected").text();
+//     step1Checking[0] = 0;
+// }).blur(function(e) {
+//  	var selcity1 = $(this).val();
+//  	
+//  	if(selcity1==0 || selcity1==0 || selcity1==0)
+//		{
+//			step1Checking[0] = 1;
+//			$(".sel-city").text("请选择所在城市，所在区域！");
+//		} 
+//  }).focus(function(e){
+//  	$(".sel-city").text("");
+//  });
+
 	//可住人数
 	$("#people-num").blur(function(e) {
 		var liveNum = $("#people-num option:selected").val(); 
@@ -69,8 +103,6 @@
 	
 	//床数
 	var bedDetails = $(".bed-details");
-	
-	
 	//双人床 添加床数按钮
 	$("#D-btn").on("click",function(){
 		var twoTitle = $("#DTitle").text();
@@ -79,45 +111,51 @@
 		var Dlength = $("#Dlength").val();
 		if(Dwide=="" || Dlength=="")
 		{
-			$("#add-prompt").text("（请填写床宽和床长!）");
+			$("#add-prompt").text("（请填写床数、床宽或床长或设置床的类别!）");
 		}
 		else if(Dwide>4 || Dlength>4)
 		{
 			$("#add-prompt").text("（床宽和床长最多为4米）");
+		}
+		else if(Dwide<1 || Dlength<1)
+		{
+			$("#add-prompt").text("（床宽和床长最少为1米）");
 		}
 		else
 		{
 			$("#add-prompt").text("");
 			$(".set-add").css("display","none");
 			$("#bed-num .bed-details").append(
-									'<li class="bed-li">'+
-										'<span class="bed-title">双人床</span>'+
-										'<div class="bed-size">'+
-											'<span class="wide">2</span>'+
-											'<span>米</span>'+
-											'<span>*</span>'+
-											'<span class="length">2</span>'+
-											'<span>米</span>'+
-										'</div>'+
-										'<span class="bed-title piece">1张</span>'+
-										'<span class="bed-delete">删除</span>'+
-									'</li>'
-								
-							  );
+					'<li class="bed-li">'+
+						'<span class="bed-title">双人床</span>'+
+						'<div class="bed-size">'+
+							'<span class="wide">2</span>'+
+							'<span>米</span>'+
+							'<span>*</span>'+
+							'<span class="length">2</span>'+
+							'<span>米</span>'+
+						'</div>'+
+						'<span class="bed-title piece">1张</span>'+
+						'<span class="bed-delete">删除</span>'+
+					'</li>'
+					
+				);
 		}
+		if($(".bed-li").length>5)
+		{
+			$("#D-btn").unbind("click");
+		}
+		else{
+			$("#D-btn").bind("click");
+		};
 		$(".bed-delete").on("click",function(){
 			$(this).parent(".bed-li").remove();
+			if ($("#bed-num .bed-details").find("li").length ==0) {
+				$(".set-add").show();
+			}
 		});
-		//判断长度不能大于4
-	var bedNum = $(".bed-li");
-	if(bedNum.length>5)
-	{
-		$("#D-btn").unbind("click");
-	}
-	else{
-		$("#D-btn").bind("click");
-	}
 	});
+	
 	//单人床 添加床数按钮
 	$("#S-btn").on("click",function(){
 		var oneTitle = $("#Stitle").text();
@@ -126,11 +164,15 @@
 		var Slength = $("#Slength").val();
 		if(Swide=="" || Slength=="")
 		{
-			$("#single-prompt").text("（请填写床宽和床长!）");
+			$("#single-prompt").text("（请填写床数、床宽或床长或设置床的类别!）");
 		}
 		else if(Swide>4 || Slength>4)
 		{
 			$("#single-prompt").text("（床宽和床长最多为4米）");
+		}
+		else if(Swide<1 || Slength<1)
+		{
+			$("#single-prompt").text("（床宽和床长最少为1米）");
 		}
 		else
 		{
@@ -152,8 +194,18 @@
 								
 							  );
 		}
+		if($(".bed-li").length>5)
+		{
+			$("#S-btn").unbind("click");
+		}
+		else{
+			$("#S-btn").bind("click");
+		};
 		$(".bed-delete").on("click",function(){
 			$(this).parent(".bed-li").remove();
+			if ($("#bed-num .bed-details").find("li").length ==0) {
+				$(".set-add").show();
+			}
 		});
 	});
 	//其他床 添加床数按钮
@@ -164,11 +216,15 @@
 		var Olength = $("#Olength").val();
 		if(Owide=="" || Olength=="")
 		{
-			$("#other-prompt").text("（请填写床宽和床长!）");
+			$("#other-prompt").text("（请填写床数、床宽或床长或设置床的类别!）");
 		}
 		else if(Owide>4 || Olength>4)
 		{
 			$("#other-prompt").text("（床宽和床长最多为4米）");
+		}
+		else if(Owide<1 || Olength<1)
+		{
+			$("#other-prompt").text("（床宽和床长最少为1米）");
 		}
 		else
 		{
@@ -190,11 +246,32 @@
 								
 							  );
 		}
+		if($(".bed-li").length>5)
+		{
+			$("#O-btn").unbind("click");
+		}
+		else{
+			$("#O-btn").bind("click");
+		};
 		$(".bed-delete").on("click",function(){
 			$(this).parent(".bed-li").remove();
+			if ($("#bed-num .bed-details").find("li").length ==0) {
+				$(".set-add").show();
+			}
 		});
 	});
-	console.log(bedDetails.find("li").length)
+	//能否加床
+	$(".homesInfo-Can").find("ins").each(function(idx,itm){
+		console.log(idx,itm);
+		$(this).on("click",function(){
+			if ($(this).is(".checked")) {
+				alert("未选中");
+			}else{
+				alert("选中了"+$(this).next().text());
+			}
+		})
+		
+	})
 	
 	
 	//房源别名
@@ -203,73 +280,74 @@
 		if(houseName=='')
 		{
 			$(".houseName").text("请设置房源别名！");
+			step1Checking[4] = 1;
+		}else{
+			 $(".houseName").text("");
+			 step1Checking[4] = 0;
 		}
-	}).focus(function(e) {
-        $(".houseName").text("");
-    });
+	});
 	
 	
-	//按钮点击事件
+	//保存下一步按钮点击事件
 	$("#step-1").on("click",function(e){
+		
+		if (step1Checking[0]==0 && step1Checking[1]==0&&step1Checking[2]==0&&step1Checking[3]==0&&step1Checking[4]==0) {
+			alert("跳转下一步")
+		}else{
+			$("#reg-shortcut .txt-zc:input").trigger('blur'); 
+		};
 		//所在城市
-		var selcity = $(".largeSelect option:selected").val(); 
-		if(selcity=="请选择所在城市" || selcity=="请选择所在区域" || selcity=="请选择所在商区")
-		{
-			$(".sel-city").text("请选择所在城市，所在区域！");
-		}
+//		var selcity = $(".largeSelect option:selected").val(); 
+//		if(selcity=="请选择所在城市" || selcity=="请选择所在区域" || selcity=="请选择所在商区")
+//		{
+//			$(".sel-city").text("请选择所在城市，所在区域！");
+//		}
+//		
+//		//具体地址
+//		var address = $(".house-address").val();
+//		if(address=='')
+//		{
+//			$(".specific-address").text("请输入具体地址！");
+//		}
+//		//精确地址
+//		var building = $(".house-building").val();  
+//		if(building=='' || building==null)
+//		{
+//			$(".address-word").text("请填写房源精确地址！");
+//		}
+//		//房屋面积
+//		var houseErea = $(".house-area").val();  
+//		if(houseErea=='')
+//		{
+//			$(".area").text("请输入房屋面积！");
+//		}
+//		//房屋户型  
+//		var houseRoom = $("#room option:selected").val();
+//		
+//		//可住人数
+//		var liveNum = $("#people-num option:selected").val(); 
+//		
+//		//床数
+//		var bedNum = $(".bed-li");
+//		if(bedNum.length>0)
+//		{
+//			$(".addword").text("");
+//		}
+//		else{
+//			$(".addword").text("请添加床数");
+//		}
+//		//房源别名
+//		var houseName = $(".alias").val();  
+//		if(houseName=='')
+//		{
+//			$(".houseName").text("请设置房源别名！");
+//		}
+
 		
-		//具体地址
-		var address = $(".house-address").val();
-		if(address=='')
-		{
-			$(".specific-address").text("请输入具体地址！");
-		}
-		//精确地址
-		var building = $(".house-building").val();  
-		if(building=='' || building==null)
-		{
-			$(".address-word").text("请填写房源精确地址！");
-		}
-		//房屋面积
-		var houseErea = $(".house-area").val();  
-		if(houseErea=='')
-		{
-			$(".area").text("请输入房屋面积！");
-		}
-		//房屋户型  
-		var houseRoom = $("#room option:selected").val();
-		
-		//可住人数
-		var liveNum = $("#people-num option:selected").val(); 
-		
-		//床数
-		var bedNum = $(".bed-li");
-		if(bedNum.length>0)
-		{
-			$(".addword").text("");
-		}
-		else{
-			$(".addword").text("请添加床数");
-		}
-		//房源别名
-		var houseName = $(".alias").val();  
-		if(houseName=='')
-		{
-			$(".houseName").text("请设置房源别名！");
-		}
 				
 	});
 	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	//步骤二
 	//特色标题
 	$("#house-name").blur(function(e) {
@@ -277,7 +355,7 @@
 		if(houseName=="")
 		{
 			$("#step-word").text("请您输入您的标题名称");
-		}
+		};
 	}).focus(function(e) {
         $("#step-word").text("");
     });

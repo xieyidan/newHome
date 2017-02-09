@@ -500,7 +500,6 @@
 <!--登录-->
 <div class="content-bg">
     <div class="content">
-      <!--<form class="login-form"  method="post" action="#">-->
         <!-- 登录类型 -->
         <ul id="myTab" class="nav nav-tabs">
             <li class="active">
@@ -510,11 +509,11 @@
         </ul>
         <div id="myTabContent" class="tab-content">
             <!-- 快捷登录 -->
-            <form class="tab-pane fade in active" id="shortcut">
+            <form class="tab-pane fade in active shortcut-submit" id="shortcut" >
                 <div class="form-group tel">
                     <label for="firstname" class="col-sm-2 control-label">手机号</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="Hortcut-phone"  placeholder="请输入您的手机号">
+                        <input type="text" class="txt txt-short" id="Hortcut-phone"  placeholder="请输入您的手机号">
                         <span class="note-pwd"><a id="Hortcut-code" href="javascript:void(0);">获取短信验证码</a></span>
                     </div>
                     <span class="prompt prompt-shortcut"></span>
@@ -522,7 +521,7 @@
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">图片<br/>验证码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="pic-shortcut"  placeholder="请输入图片验证码">
+                        <input type="text" class="txt txt-short" id="pic-shortcut"  placeholder="请输入图片验证码">
                         <span class="verification"><a href="javascript:void(0);" id="pic-code-v">我是快捷登录</a></span>
                     </div>
                     <span class="prompt prompt-shortcut-up"></span>
@@ -530,7 +529,7 @@
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">手机<br/>验证码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="phone-code"  placeholder="请输入您手机收到的验证码">
+                        <input type="text" class="txt txt-short" id="phone-code"  placeholder="请输入您手机收到的验证码">
                     </div>
                     <span class="prompt prompt-phone-verify"></span>
                 </div>
@@ -556,14 +555,14 @@
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">手机号</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="tel-phone"  placeholder="请输入您的手机号">
+                        <input type="text" class="txt txt-common" id="tel-phone"  placeholder="请输入您的手机号">
                     </div>
                     <span class="prompt prompt-tel"></span>
                 </div>
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">密码</label>
                     <div class="col-sm-10">
-                        <input type="password" class="txt" id="set-pwd"  placeholder="请输入密码">
+                        <input type="password" class="txt txt-common" id="set-pwd"  placeholder="请输入密码">
                     </div>
                     <span class="prompt prompt-pwd-common"></span>
                 </div>
@@ -602,7 +601,7 @@
                 <div class="form-group tel">
                     <label for="firstname" class="col-sm-2 control-label">手机号</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="cell-phone"  placeholder="请输入您的手机号">
+                        <input type="text" class="txt txt-zc" id="cell-phone"  placeholder="请输入您的手机号">
                         <span class="note-pwd" id="register"><a  href="javascript:void(0);">获取短信验证码</a></span>
                     </div>
                     <span class="prompt prompt-phone"></span>
@@ -611,7 +610,7 @@
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">图片<br/>验证码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="pic-code"  placeholder="请输入图片验证码">
+                        <input type="text" class="txt txt-zc" id="pic-code"  placeholder="请输入图片验证码">
                         <span class="verification"><a href="javascript:void(0);" class="register-code">我是注册</a></span>
                     </div>
                     <span class="prompt prompt-piccode"></span>
@@ -619,21 +618,21 @@
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">手机<br/>验证码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="mobile-code"  placeholder="请输入您手机收到的验证码">
+                        <input type="text" class="txt txt-zc" id="mobile-code"  placeholder="请输入您手机收到的验证码">
                     </div>
                     <span class="prompt prompt-mobile-reg"></span>
                 </div>
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">设置<br/>密码</label>
                     <div class="col-sm-10">
-                        <input type="password" class="txt" id="register-pwd"  placeholder="请设置您的新密码">
+                        <input type="password" class="txt txt-zc" id="register-pwd"  placeholder="请设置您的新密码">
                     </div>
                     <span class="prompt register-pwd"></span>
                 </div>
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">邀请码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="invitation-code"  placeholder="请输入邀请码">
+                        <input type="text" class="txt txt-zc" id="invitation-code"  placeholder="请输入邀请码">
                     </div>
                     <span class="prompt prompt-inv"></span>
                 </div>
@@ -670,27 +669,27 @@
 	                <div class="form-group">
 	                    <label for="lastname" class="col-sm-2 control-label">昵称</label>
 	                    <div class="col-sm-10">
-	                        <input type="text" class="txt" id="pic-nickname"  placeholder="请设置您的昵称">      
+	                        <input type="text" class="txt txt-ws" id="pic-nickname"  placeholder="请设置您的昵称">      
 	                    </div>
 	                    <p class="prompt-nickname"></p>
 	                </div>
 	                <div class="form-group">
 	                    <label for="lastname" class="col-sm-2 control-label">姓名</label>
 	                    <div class="col-sm-10">
-	                        <input type="text" class="txt" id="pic-name"  placeholder="请输入您的真实姓名">
+	                        <input type="text" class="txt txt-ws" id="pic-name"  placeholder="请输入您的真实姓名">
 	                    </div>
 	                    <p class="prompt-name"></p>
 	                </div>
 	                <div class="form-group">
 	                    <label for="lastname" class="col-sm-2 control-label">身份<br/>证号</label>
 	                    <div class="col-sm-10">
-	                        <input type="text" class="txt" id="set-identity"  placeholder="请输入您的身份证号码">
+	                        <input type="text" class="txt txt-ws" id="set-identity"  placeholder="请输入您的身份证号码">
 	                    </div>
 	                    <p class="prompt-identity"></p>
 	                </div>
 	                <div class="form-group" style="padding-top: 30px;">
 	                    <div class="col-sm-offset-2 col-sm-10">
-	                        <button type="submit" class="btn btn-default per-btn">注册完成</button>
+	                        <button type="submit" class="btn btn-default acc-reg-btn">注册完成</button>
 	                        <span class="skip"><a class="tg" href="javascript:void(0);" >跳过</a></span>
 	                    </div>
 	                </div>
@@ -700,61 +699,7 @@
       </form>      
    </div>
 </div>
-<!--用户注册信息完善-->
-<!--<div class="content-per">
-    <div class="reg-center">
-        <div class="reg-top">
-            <h2 class="reg-title">注册信息资料完善</h2>
-        </div>
-        <form class="login-form" method="post">
-            <div class="" id="per-shortcut">
-            	<div class="my-pic">
-				   <p class="fk-img imghead">
-				   	   <img class="reg-img" src="images/user/fk_touxiang_icon.png">
-				   	   <input class="reg-upload" type="file" multiple />
-				   </p>
-				   <p>添加头像</p>
-				</div>
-                <div class="form-group tel">
-                    <label for="firstname" class="col-sm-2 control-label">性别</label>
-                    <div class="col-sm-10">
-                        <div class="radio" name="sex" value="先生"><ins class="checked sir"></ins><span class="">先生</span></div>
-                        <div class="radio" name="sex" value="女士"><ins class="madam"></ins><span class="">女士</span></div>
-                    </div>
-                    <span class="prompt prompt-phone"></span>
-                </div>
-               
-                <div class="form-group">
-                    <label for="lastname" class="col-sm-2 control-label">昵称</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="txt" id="pic-nickname"  placeholder="请设置您的昵称">      
-                    </div>
-                    <p class="prompt-nickname"></p>
-                </div>
-                <div class="form-group">
-                    <label for="lastname" class="col-sm-2 control-label">姓名</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="txt" id="pic-name"  placeholder="请输入您的真实姓名">
-                    </div>
-                    <p class="prompt-name"></p>
-                </div>
-                <div class="form-group">
-                    <label for="lastname" class="col-sm-2 control-label">身份<br/>证号</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="txt" id="set-identity"  placeholder="请输入您的身份证号码">
-                    </div>
-                    <p class="prompt-identity"></p>
-                </div>
-                <div class="form-group" style="padding-top: 30px;">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default per-btn">注册完成</button>
-                        <span class="skip"><a class="tg" href="javascript:void(0);" >跳过</a></span>
-                    </div>
-                </div>
-          </div>
-      </form>      
-   </div>
-</div>-->
+
 
 <!--重设密码-->
 <div class="content-set">
@@ -763,11 +708,11 @@
             <h2 class="set-title">重设密码</h2>
         </div>
       <form class="login-form" id="reset-form" method="post">
-            <div class="tab-pane fade in active">
+            <div class="tab-pane fade in active" id="new-set">
                 <div class="form-group tel">
                     <label for="firstname" class="col-sm-2 control-label">手机号</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="reset-phone"  placeholder="请输入您的手机号">
+                        <input type="text" class="txt txt-new" id="reset-phone"  placeholder="请输入您的手机号">
                         <span class="note-pwd"><a id="get-note" href="javascript:void(0);">获取短信验证码</a></span>
                     </div>
                     <span class="prompt prompt-phone"></span>
@@ -775,7 +720,7 @@
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">图片<br/>验证码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="reset-picture"  placeholder="请输入图片验证码">
+                        <input type="text" class="txt txt-new" id="reset-picture"  placeholder="请输入图片验证码">
                         <span class="verification" id="reset-verify"><a href="javascript:void(0);">图片验证码</a></span>
                     </div>
                     <span class="prompt reset-piccode"></span>
@@ -783,20 +728,20 @@
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">手机<br/>验证码</label>
                     <div class="col-sm-10">
-                        <input type="text" class="txt" id="reset-phone-verify"  placeholder="请输入您手机收到的验证码">
+                        <input type="text" class="txt txt-new" id="reset-phone-verify"  placeholder="请输入您手机收到的验证码">
                     </div>
                     <span class="prompt reset-mobile"></span>
                 </div>
                 <div class="form-group">
                     <label for="lastname" class="col-sm-2 control-label">重设<br/>新密码</label>
                     <div class="col-sm-10">
-                        <input type="password" class="txt" id="reset-pwd"  placeholder="请输入您设置的新密码">
+                        <input type="password" class="txt txt-new" id="reset-pwd"  placeholder="请输入您设置的新密码">
                     </div>
                     <span class="prompt reset-pwd"></span>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">完成</button>
+                        <button type="submit" class="btn btn-default" id="new-pswd">完成</button>
                     </div>
                 </div>
            </div>
