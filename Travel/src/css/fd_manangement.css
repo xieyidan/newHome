@@ -524,11 +524,14 @@ caption {
 
 /***********我的消息-聊天记录***********/
 .chat-cont {
+	display: block;
 	width: 100%;
-	padding: 20px 20px;
-	background: #fff;
+	background: #fff;	
 }
 /*消息检索*/
+.infor-search {
+	padding: 20px 20px 0 20px;
+}
 .infor-time {
 	width: 147px;
 	height: 30px;
@@ -542,6 +545,10 @@ caption {
 	margin-right: 30px;
 }
 /*聊天消息*/
+.chat-message {
+	padding-left: 20px;
+	padding-right: 20px;
+}
 .chat-infor {
 	width: 100%;
 	border: 2px solid #ccc;
@@ -587,7 +594,556 @@ caption {
 	color: #969696;
 	padding: 0 5px;
 }
+/***********聊天记录-聊天详情**********/
+.chat-detail {
+	display: none;
+	margin: 20px 20px 40px 20px;
+	border: 2px solid #ccc;
+}
+/*聊天内容*/
+.detail-box {
+	float: left;
+	padding: 10px 50px 40px 20px;
+}
+/*返回聊天记录页*/
+.back-chat {
+	display: block;
+	color: #ff6a51;
+	padding-bottom: 30px;
+}
+.back-chat img {
+	padding-right: 10px;
+	vertical-align: middle;
+}
+.back-chat:hover {
+	color: #ff6a51;
+}
+/*聊天内容详情*/
+.detail-cont {
+	display: block;
+	width: 630px;
+}
+.chat-box div {
+	display: inline-block;
+}
+.detail-list {
+	padding-bottom: 20px;
+}
+/*房东信息*/
+.detail-left {
+	padding-right: 20px;
+}
+.chat-img {
+	width: 48px;
+	height: 48px;
+	margin-left: 3px;
+}
+.chat-img img {
+	width: 100%;
+	height: 100%;
+	
+}
+/*聊天内容*/
+.chat-record {
+	width: 548px;
+	height: 75px;
+	border: 2px solid #ccc;
+}
+/*发表时间*/
+.chat-time p,.chat-time p span {
+	text-align: right;	
+	font-size: 12px;
+	color: #969696;
+	line-height: 20px;
+}
+.chat-time p span {
+	padding: 0 5px;
+}
+/*房客聊天信息*/
+.fk-chat {
+	float: right;
+	padding-left: 20px;
+}
+.chat-record-left {
+	float: right;
+	width: 548px;
+	height: 75px;
+	border: 2px solid #ccc;
+}
+/*发表时间*/
+.fk-time p,.fk-time p span {
+	text-align: left;	
+	font-size: 12px;
+	color: #969696;
+	line-height: 20px;
+}
+.fk-time p span {
+	padding: 0 5px;
+}
+/*查看更多*/
+.look-more {
+	display: none;
+	color: #ff6a51;
+	text-align: center;
+	padding: 20px 0;
+}
+.look-more:hover{
+	color: #ff6a51;
+}
+/*房东房源信息*/
+.detail-house {
+	float: left;
+	padding-top: 30px;
+	padding-bottom: 40px;
+}
+.chat-house p {
+	padding-top: 3px;
+}
+/*回复房东*/
+.reply-fd {
+	display: block;
+	width: 86px;
+	height: 24px;
+	color: #fff;
+	text-align: center;
+	line-height: 24px;
+	background: #1bc272;
+	border-radius: 10px;	
+	margin-top: 20px;
+}
+.reply-fd:hover {
+	color: #fff;
+}
 
+/***********我的消息-系统消息***********/
+.system-message {
+	display: block;
+    width: 100%;
+    background: #fff;
+}
+.sys-message {
+	padding: 20px 20px 0 20px;
+}
+/*未读消息*/
+.no-read {
+	color: #646464;
+}
+.new-num {
+	color: #ff6a51;
+	padding: 0 3px;
+}
+/*全选，批量删除*/
+.operate {
+	margin-top: 30px;
+}
+.operate a {
+	margin-right: 20px;
+}
+.operate a:hover {
+	color: #323232;
+}
+.operate a input {
+	width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.all-del {
+	width: 82px;
+	height: 16px;
+	background: url(../css/img/shanchu_moren_icon.png) no-repeat;
+	background-position: 0 2px;
+	padding-left: 25px;
+}
+.tag-read {
+	width: 100px;
+	height: 16px;
+	background: url(../css/img/biaozhu_moren_icon.png) no-repeat;
+	background-position: 0 2px;
+	padding-left: 25px;
+}
+/*系统消息列表*/
+.message-list {	
+	margin-top: 20px;
+	margin-left: 27px;
+}
+.message-list td {
+	vertical-align: top;
+}
+.message-cont {
+	width: 912px;
+	text-align: left;
+	padding-left: 10px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+}
+/*未读状态*/
+.bold {
+    font-weight: bold;
+}
+/*时间*/
+.message-time {
+	font-size: 12px;
+	text-align: right;
+}
+.message-time span {
+	color: #969696;
+	padding-left: 20px;
+}
+/*删除*/
+.message-del {
+	color: #ff6a51;
+}
+
+/***********我的评价***********/
+.my-eval {
+	display: block;
+	width: 100%;
+	background: #fff;	
+}
+/*选择房源*/
+.sel-house {
+	padding: 20px 20px 0 20px;
+}
+.sel-house select {
+	width: 147px;
+	margin-left: 20px;
+}
+/*评价列表*/
+.eval-message {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.eval-infor {
+	border: 1px solid #1bc272;
+	margin-top: 30px;
+}
+/*订单号*/
+.eval-one {
+	height: 48px;
+	line-height: 48px;
+	background: #e9f2ee;
+	border-bottom: 1px solid #1bc272;
+	padding-left: 30px;
+}
+.eval-date {
+	padding-left: 30px;
+	padding-right: 15px;
+}
+.eval-color {
+	color: #ff6a51;
+}
+/*评价房源*/
+.eval-two {
+	height: 76px;
+}
+.eval-ul li {
+	float: left;
+	line-height: 76px;
+}
+/*房源*/
+.eval-tit {
+	width: 368px;
+	height: 76px;
+	border-right: 1px solid #1bc272;
+}
+.eval-tit span {
+	padding-left: 30px;
+}
+.fkImg {
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+/*回复*/
+.eval-reply {
+	width: 303px;
+	height: 76px;
+	text-align: center;
+	border-right: 1px solid #1bc272;
+}
+.eval-reply span {
+	padding-right: 30px;
+}
+/*查看*/
+.eval-look {
+	width: 337px;
+	height: 76px;
+	text-align: center;
+}
+.eval-note {
+	color: #ff6a57;
+	margin-left: 50px;
+}
+.fkeval {
+	display: inline-block;
+	width: 140px;
+	line-height: 20px;
+	word-wrap:break-word;
+}
+
+/***********我的设置—个人信息***********/
+.Personal-infor {
+	text-align: center;
+	margin: 0 auto;
+}
+/*我的基本资料*/
+.my-infor {
+	font-size: 18px;
+	padding: 30px 0 20px 0;
+}
+.my-pic{
+	padding-bottom: 30px;
+}
+/*上传头像*/
+.imghead {
+    position: relative;
+    display: inline-block;
+}
+.imghead input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: 0;
+}
+.imghead .previewImg{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+/*我的头像*/
+.my-pic p {
+	font-size: 16px;
+	margin-top: 10px;
+}
+/*积分*/
+.get-integral {
+	color: #ff1a00;
+	font-size: 18px;
+	padding: 20px 0;
+}
+
+/*完善信息*/
+.perfect {
+	width: 81%;
+	position: relative;
+	left: 198px;
+	overflow: hidden;
+}
+/*用户呢称*/
+.perfect dl {
+	width: 100%;
+	height: 60px;
+}
+.perfect dl dt {
+	float: left;
+	width: 80px;
+	font-size: 16px;
+	line-height: 34px;
+	text-align: right;
+}
+.perfect dl dd {
+	float: left;
+	margin-left: 20px;
+}
+.perfect dl dd select,.perfect dl dd input {
+	height: 34px;
+	background: #fff;
+	padding-left: 10px;
+}
+.perfect dl dd input[type="text"] {
+	width: 315px;
+}
+.perfect dl dd select {
+	width: 110px;
+	margin-right: 6px;
+}
+.bank-card {
+	color: #ff1a00;
+	padding-left: 30px;
+}
+/*性别*/
+.radio {
+	height: 30px;
+    line-height: 30px;
+}
+.radio:nth-of-type(2) {
+	margin-left: 50px;
+}
+/*出生日期*/
+select:nth-of-type(2),select:nth-of-type(3) {
+	margin-left: 24px;
+}
+/*工作*/
+.job {
+	width: 110px !important;
+    margin-right: 30px;
+}
+/*教育*/
+.school {
+	width: 180px !important;
+    margin-left: 24px;
+}
+/*保存按钮*/
+.save {
+	display: block;
+	width: 180px;
+	height: 50px;
+	color: #fff;
+	font-size: 18px;
+	background: #1bc272;
+	border-radius: 10px;
+	margin: 20px auto 40px auto;
+}
+
+
+/***********我的设置—密码设置***********/
+#item6 .right-center {
+	height: 658px;
+}
+/*标题*/
+.set-pwd {
+	font-size: 18px;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+/*获取验证码*/
+.change {
+    width: 81%;
+    position: relative;
+    left: 308px;
+    overflow: hidden;
+}
+.change dl {
+	width: 100%;
+    height: 65px;
+}
+.change dl dt {
+    float: left;
+    width: 75px;
+    font-size: 16px;
+    text-align: left;
+}
+.change dl dt span {
+	display: block;
+}
+.change dl dd {
+    float: left;  
+}
+.change dl dd input {
+	width: 180px;
+	height: 34px;
+	background: #fff;
+	padding-left: 10px;
+}
+.get-code {
+	display: inline-block;
+	color: #fff;
+	font-size: 14px;
+	background: #1bc272;
+	border-radius: 10px;
+	padding: 6px 26px;
+	margin-left: 20px;
+}
+.get-code:hover {
+	color: #fff;
+}
+/***********我的设置—修改验证***********/
+.right-verify {
+	display: block;
+	width: 100%;
+	background: #fff;	
+}
+.verify-cont {
+	width: 45%;
+	text-align: center;
+	padding: 70px 0;
+	margin: 0 auto;
+}
+.verify-cont dl {
+	display: table;
+	width: 100%;
+	margin-bottom: 30px;
+}
+.verify-cont dl dt {
+	float: left;
+	width: 85px;
+	font-size: 16px;
+	text-align: right;
+}
+.verify-cont dl dt img {
+	margin-right: 10px;
+}
+.verify-cont dl dt span b {
+	display: inline-block;
+}
+.verify-cont dd {
+    float: left;
+    margin-left: 20px;
+}
+.id-number, .my-name {
+	width: 330px;	
+}
+.fd-card, .my-note {
+	width: 160px;
+}
+/*手持证件照片*/
+.pic {
+	display: inline-block;
+	width: 123px;
+	height: 130px;
+	background: #ebebeb;
+	border: 2px solid #ccc;
+	margin-right: 15px;
+    position: relative;
+    right: 0;
+	/*background: url(img/zhengjianPhoto_tianjia_icon.png) no-repeat center center;*/
+}
+.pic input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 123px;
+	height: 130px;
+}
+.pic img{
+	position: absolute;
+	width: 119px;
+	height: 126px;
+	right: 0px;
+}
+.img-word {
+	display: inline-block;
+	height: 30px;
+	color: #323232;
+	position: relative;
+    top: 26px;
+    right: 235px;
+}
+.img-word:nth-of-type(2) {
+	right: 130px;
+}
+/*申请修改按钮*/
+.apply-change {
+	display: block;
+	width: 150px;
+	height: 50px;
+	font-size: 16px;
+	text-align: center;
+	color: #fff;
+	background: #1BC272;
+	border-radius: 10px;
+	margin:  0 auto;
+	margin-bottom: 40px;
+}
+
+/***********我的设置—收款设置***********/
 
 /***********接单操作弹框***********/
 #order-off {
